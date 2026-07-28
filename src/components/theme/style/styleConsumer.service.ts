@@ -37,23 +37,7 @@ export class StyleConsumerService {
   private readonly meta: ControlMetaType;
 
   constructor(name: string, style: StyleType) {
-    this.name = name;
-
-    this.meta = this.safe(style[name], (generatedConfig): ControlMetaType => {
-      return generatedConfig.meta;
-    });
-
-    if (!this.meta) {
-      const message: string = [
-        `\n${this.name}: unsupported configuration.`,
-        'Using UI Kitten components is only possible with configuring ApplicationProvider.',
-        `📖 Documentation: ${DOC_ROOT}/guides/getting-started#manual-installation`,
-        '\nIn case you have all in place, there might be an incorrect usage of a "styled" function.',
-        `📖 Documentation: ${DOC_ROOT}/design-system/custom-component-mapping`,
-      ].join('\n');
-
-      console.error(message);
-    }
+      throw new Error("STUB");
   }
 
   public createDefaultProps(): StyledComponentProps {
@@ -92,16 +76,13 @@ export class StyleConsumerService {
   private getGeneratedStyleMapping(style: StyleType, info: StyleInfo): StyleType {
 
     return this.safe(style[this.name], (componentStyles: ControlThemedStyleType): ThemedStyleType => {
-      const styleKeys: string[] = Object.keys(componentStyles.styles);
-      const query: string = this.findGeneratedQuery(info, styleKeys);
-
-      return componentStyles.styles[query];
+        throw new Error("STUB");
     });
   }
 
   private withValidInteraction(interaction: Interaction[]): Interaction[] {
     const validInteractions: Interaction[] = interaction.filter((key: Interaction) => {
-      return Object.keys(this.meta.states).includes(key);
+        throw new Error("STUB");
     });
 
     if (validInteractions.length < interaction.length) {
@@ -121,10 +102,7 @@ export class StyleConsumerService {
     const invalidParameters: string[] = [];
 
     Object.keys(mapping).forEach((key: string) => {
-      if (!Object.keys(this.meta.parameters).includes(key)) {
-        invalidParameters.push(key);
-        delete mapping[key];
-      }
+        throw new Error("STUB");
     });
 
     if (invalidParameters.length !== 0) {
@@ -147,7 +125,7 @@ export class StyleConsumerService {
     const stateProps: Partial<P> = this.getDerivedStates(this.meta, props);
 
     const variants: string[] = Object.keys(variantProps).map((variant: string): string => {
-      return variantProps[variant];
+        throw new Error("STUB");
     });
 
     const states: string[] = Object.keys(stateProps);
@@ -161,7 +139,7 @@ export class StyleConsumerService {
 
   private getDefaultAppearance(): string {
     const matches: string[] = Object.keys(this.meta.appearances).filter((appearance: string): boolean => {
-      return this.meta.appearances[appearance].default === true;
+        throw new Error("STUB");
     });
 
     return matches[matches.length - 1];
@@ -169,35 +147,25 @@ export class StyleConsumerService {
 
   private getDefaultVariants(): DefaultVariants {
     return this.transformObject(this.meta.variantGroups, (variants, group: string): string | undefined => {
-      return Object.keys(variants[group]).find((variant: string): boolean => {
-
-        return variants[group][variant].default === true;
-      });
+        throw new Error("STUB");
     });
   }
 
   private getDefaultStates(): DefaultVariants {
     return this.transformObject(this.meta.states, (states, state: string): boolean | undefined => {
-      const isDefault: boolean = states[state].default === true;
-
-      return isDefault ? isDefault : undefined;
+        throw new Error("STUB");
     });
   }
 
   private getDerivedVariants<P extends StyledComponentProps>(meta: ControlMetaType, props: P): Partial<P> {
     return this.transformObject(props, (p: P, prop: string): string | undefined => {
-      const isVariant: boolean = Object.keys(meta.variantGroups).includes(prop);
-
-      return isVariant ? p[prop] : undefined;
+        throw new Error("STUB");
     });
   }
 
   private getDerivedStates<P extends StyledComponentProps>(meta: ControlMetaType, props: P): Partial<P> {
     return this.transformObject(props, (p: P, prop: string): boolean => {
-      const isState: boolean = Object.keys(meta.states).includes(prop);
-      const isAssigned: boolean = p[prop] === true;
-
-      return isState && isAssigned;
+        throw new Error("STUB");
     });
   }
 
@@ -211,12 +179,7 @@ export class StyleConsumerService {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private transformObject<V extends object>(value: V, transform: (value: V, key: string) => any): Partial<V> {
     return Object.keys(value).reduce((acc: Partial<V>, key: string) => {
-      const nextValue = transform(value, key);
-
-      return nextValue ? {
-        ...acc,
-        [key]: nextValue,
-      } : acc;
+        throw new Error("STUB");
     }, {});
   }
 
@@ -242,7 +205,7 @@ export class StyleConsumerService {
       ...info.states,
     ];
 
-    return source.find((value) => this.compareArrays(query, value.split(SEPARATOR_MAPPING_ENTRY)));
+    return source.find((value) => { throw new Error("STUB"); });
   }
 
   /**
@@ -256,7 +219,7 @@ export class StyleConsumerService {
       return false;
     }
 
-    return lhs.reduce((acc: boolean, current: string): boolean => acc && rhs.includes(current), true);
+    return lhs.reduce((acc: boolean, current: string): boolean => { throw new Error("STUB"); }, true);
   }
 
   /**

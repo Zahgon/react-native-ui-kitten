@@ -48,11 +48,11 @@ class ModalServiceType {
   private shouldUseTopInsets = false;
 
   public set setShouldUseTopInsets(state: boolean) {
-    this.shouldUseTopInsets = state;
+      throw new Error("STUB");
   }
 
   public get getShouldUseTopInsets(): boolean {
-    return this.shouldUseTopInsets;
+      throw new Error("STUB");
   }
 }
 

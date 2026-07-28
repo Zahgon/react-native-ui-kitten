@@ -101,106 +101,45 @@ export class ProgressBar extends React.PureComponent<ProgressBarProps> {
   }
 
   public componentDidMount(): void {
-    if (this.props.animating) {
-      this.startAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentDidUpdate(prevProps: ProgressBarProps): void {
-    const progressChanged: boolean = this.props.progress !== prevProps.progress;
-    const animatingChanged: boolean = this.props.animating !== prevProps.animating;
-
-    if (progressChanged && this.props.animating) {
-      this.startAnimation();
-    }
-
-    if (animatingChanged && !this.props.animating) {
-      this.stopAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentWillUnmount(): void {
-    this.animation.release();
+      throw new Error("STUB");
   }
 
   private startAnimation = (): void => {
-    const validProgress = this.clamp(this.props.progress);
-    this.animation.startDeterminate(validProgress);
+      throw new Error("STUB");
   };
 
   private stopAnimation = (): void => {
-    this.animation.stop();
+      throw new Error("STUB");
   };
 
   private clamp = (progress: number): number => {
-    return progress > 1 ? 1 : (progress < 0 ? 0 : progress);
+      throw new Error("STUB");
   };
 
   private onLayout = (event: LayoutChangeEvent): void => {
-    this.props.onLayout?.(event);
-    const trackWidth = event.nativeEvent.layout.width;
-
-    this.setState({ trackWidth });
-    this.animation.setBarWidth(trackWidth);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): ComponentStyles => {
-    const {
-      height,
-      borderRadius,
-      trackColor,
-      indicatorColor,
-    } = source;
-
-    return {
-      track: {
-        height,
-        borderRadius,
-        backgroundColor: trackColor,
-      },
-      indicator: {
-        height,
-        borderRadius,
-        backgroundColor: indicatorColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderIndicator = (
     style: ViewStyle, progress: number, animating: boolean,
   ): React.ReactElement<Animated.AnimatedProps<ViewStyle>> => {
-    const indicatorStyles: Animated.AnimatedProps<ViewStyle>[] = [style];
-
-    if (animating) {
-      const animationStyles = this.animation.toProps();
-
-      indicatorStyles.push(animationStyles);
-    } else {
-      const validProgress = this.clamp(progress);
-      const width = `${validProgress * 100}%`;
-
-      indicatorStyles.push({ width });
-    }
-
-    return (
-      <Animated.View style={indicatorStyles} />
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, progress, animating, ...viewProps } = this.props;
-    const combinedStyles: StyleType = StyleSheet.flatten([eva.style, this.props.style]);
-    const evaStyle = this.getComponentStyle(combinedStyles);
-
-    return (
-      <View
-        {...viewProps}
-        style={[evaStyle.track, styles.noOverflow, style]}
-        onLayout={this.onLayout}
-      >
-        {this.renderIndicator(evaStyle.indicator, progress, animating)}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

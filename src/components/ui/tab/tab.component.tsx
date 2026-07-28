@@ -71,73 +71,23 @@ export class Tab extends React.Component<TabProps> {
   };
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onPress = (): void => {
-    this.props.onSelect?.(!this.props.selected);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      textMarginVertical,
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-      textColor,
-      iconWidth,
-      iconHeight,
-      iconMarginVertical,
-      iconTintColor,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        marginVertical: iconMarginVertical,
-        tintColor: iconTintColor,
-      },
-      title: {
-        marginVertical: textMarginVertical,
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        color: textColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const { eva, style, title, icon, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[evaStyle.container, styles.container, style]}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onPress={this.onPress}
-      >
-        <FalsyFC
-          style={evaStyle.icon}
-          component={icon}
-        />
-        <FalsyText
-          style={evaStyle.title}
-          component={title}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

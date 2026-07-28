@@ -129,113 +129,39 @@ export class CircularProgressBar extends React.PureComponent<CircularProgressBar
   }
 
   private get containerSize(): Size {
-    const { width, height } = StyleSheet.flatten([this.props.eva.style, this.props.style]);
-    // @ts-ignore: width and height are restricted to be a number
-    return new Size(width, height);
+      throw new Error("STUB");
   }
 
   public componentDidMount(): void {
-    if (this.props.animating) {
-      this.startAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentDidUpdate(prevProps: CircularProgressBarProps): void {
-    const progressChanged: boolean = this.props.progress !== prevProps.progress;
-    const animatingChanged: boolean = this.props.animating !== prevProps.animating;
-
-    if (progressChanged && this.props.animating) {
-      this.startAnimation();
-    }
-
-    if (animatingChanged && !this.props.animating) {
-      this.stopAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentWillUnmount(): void {
-    this.animation.release();
+      throw new Error("STUB");
   }
 
   private startAnimation = (): void => {
-    const validProgress = this.clamp(this.props.progress);
-    this.animation.startDeterminate(validProgress);
+      throw new Error("STUB");
   };
 
   private stopAnimation = (): void => {
-    this.animation.stop();
+      throw new Error("STUB");
   };
 
   private clamp = (progress: number): number => {
-    return progress > 1 ? 1 : (progress < 0 ? 0 : progress);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): ComponentStyles => {
-    const {
-      trackWidth, // width of track/indicator
-      trackColor,
-      indicatorColor,
-
-      iconWidth, // accessory icon
-
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-    } = source;
-
-    const { width, height }: Size = this.containerSize;
-
-    const radius = width / 2;
-    const elementWidth = trackWidth > radius ? radius : trackWidth;
-
-    return {
-      radius,
-      track: {
-        width: elementWidth,
-        color: trackColor,
-      },
-      indicator: {
-        width: elementWidth,
-        color: indicatorColor,
-      },
-      container: {
-        width,
-        height,
-        borderRadius: radius,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconWidth,
-        tintColor: indicatorColor,
-      },
-      text: {
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderHalfCircle = (radius: number, style: IndicatorStyle): React.ReactElement<ViewProps> => {
-    const { width, color } = style;
-    const containerSizeStyle = {
-      width: radius * 2,
-      height: radius,
-    };
-
-    return (
-      <View style={[styles.circle, containerSizeStyle]}>
-        <View
-          style={{
-            borderWidth: width,
-            borderColor: color,
-            width: radius * 2,
-            height: radius * 2,
-            borderRadius: radius,
-          }}
-        />
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   private renderHalf = (
@@ -244,27 +170,7 @@ export class CircularProgressBar extends React.PureComponent<CircularProgressBar
     rotate: string,
     opacity?: number,
   ): React.ReactElement<ViewProps> => {
-    const { radius, indicator } = evaStyle;
-    const opacityProp = opacity || opacity === 0 ? { opacity } : undefined;
-
-    return (
-      <View style={viewStyle}>
-        <View style={{ width: radius * 2, height: radius }} />
-        <Animated.View style={{
-          ...styles.absoluteFill,
-          ...opacityProp,
-          transform: [
-            { translateY: radius / 2 },
-            { rotate },
-            { translateY: -1 * radius / 2 },
-            { perspective: 1000 },
-          ],
-        }}
-        >
-          {this.renderHalfCircle(radius, indicator)}
-        </Animated.View>
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   private renderCircularProgress = (
@@ -272,56 +178,15 @@ export class CircularProgressBar extends React.PureComponent<CircularProgressBar
     animating: boolean,
     evaStyle: ComponentStyles
   ): React.ReactElement<ViewProps> => {
-    let firstHalfRotate;
-    let secondHalfRotate;
-
-    if (animating) {
-      const { rotateFirstHalf, rotateSecondHalf } = this.animation.toProps();
-
-      firstHalfRotate = rotateFirstHalf;
-      secondHalfRotate = rotateSecondHalf;
-    } else {
-      firstHalfRotate = `${Math.min(progress, 0.5) * 360 - 180}deg`;
-      secondHalfRotate = `${Math.max(0.5, progress) * 360}deg`;
-    }
-
-    const trackStyle = {
-      ...StyleSheet.absoluteFillObject,
-      borderWidth: evaStyle.track.width,
-      borderColor: evaStyle.track.color,
-      borderRadius: evaStyle.radius,
-    };
-
-    return (
-      <View style={[styles.absoluteFill, styles.center, styles.rotate90]}>
-        <View style={trackStyle} />
-        {this.renderHalf(evaStyle, styles.zIndex, firstHalfRotate)}
-        {this.renderHalf(evaStyle, styles.rotate180, secondHalfRotate)}
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   private renderText = (progress: number, style: TextStyle): React.ReactElement<TextProps> => {
-    const label = `${Math.round(progress * 100)}%`;
-    const { status, textStyle } = this.props;
-
-    return (
-      <Text
-        style={[style, textStyle]}
-        status={status}
-      >
-        {label}
-      </Text>
-    );
+      throw new Error("STUB");
   };
 
   private renderIcon = (state: LoadingStates, style: IconStyle): React.ReactElement<IconProps> => {
-    return (
-      <FalsyFC
-        component={this.props.renderIcon}
-        style={[style, this.props.iconStyle]}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderAccessory = (
@@ -329,38 +194,11 @@ export class CircularProgressBar extends React.PureComponent<CircularProgressBar
     status: EvaStatus,
     evaStyle: ComponentStyles
   ): React.ReactElement<ViewProps> => {
-    const showIcon = this.props.renderIcon;
-
-    return (
-      <View style={[styles.absoluteFill, styles.center]}>
-        {showIcon ? this.renderIcon(status, evaStyle.icon) : this.renderText(progress, evaStyle.text)}
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const {
-      eva,
-      style,
-      progress,
-      animating,
-      status,
-      size,
-      textStyle,
-      ...viewProps
-    } = this.props;
-    const validProgress = this.clamp(progress);
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <View
-        {...viewProps}
-        style={[evaStyle.container, style]}
-      >
-        {this.renderCircularProgress(validProgress, animating, evaStyle)}
-        {this.renderAccessory(validProgress, status, evaStyle)}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

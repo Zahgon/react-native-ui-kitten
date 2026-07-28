@@ -43,11 +43,7 @@ export enum State {
  * @overview-example UseStyleSheetSimpleUsage
  */
 export const useStyleSheet = <T extends Styles<T>>(styles: Styles<T>): T => {
-  const theme: ThemeType = useTheme();
-
-  return useMemo(() => {
-    return StyleService.createThemed(styles, theme);
-  }, [theme]);
+    throw new Error("STUB");
 };
 
 /**
@@ -94,7 +90,7 @@ export class StyleService {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static createThemed = <T extends Styles<T>>(styles: Styles<T>, theme: ThemeType): any => {
     return Object.keys(styles).reduce((acc, key: string) => {
-      return { ...acc, [key]: StyleService.createThemedEntry(styles[key], theme) };
+        throw new Error("STUB");
     }, {});
   };
 
@@ -103,8 +99,7 @@ export class StyleService {
    */
   static createThemedEntry = (style: StyleType, theme: ThemeType): StyleType => {
     return Object.keys(style).reduce((acc: StyleType, key: string): StyleType => {
-      const value = style[key];
-      return { ...acc, [key]: ThemeService.getValue(value, theme, value) };
+        throw new Error("STUB");
     }, {});
   };
 }

@@ -46,27 +46,14 @@ export abstract class Animation<C extends AnimationConfig, R> {
   }
 
   public stop(): void {
-    this.running = false;
-
-    this.animation.stop();
+      throw new Error("STUB");
   }
 
   public release(): void {
-    this.stop();
+      throw new Error("STUB");
   }
 
   protected onAnimationEnd = (result: Animated.EndResult): void => {
-    this.counter += 1;
-    if (this.counter === this.config.cycles) {
-      this.stop();
-    }
-    if (this.running) {
-      this.start(this.endCallback);
-    }
-    if (!this.running) {
-      this.counter = 0;
-      this.endCallback?.(result);
-      this.endCallback = null;
-    }
+      throw new Error("STUB");
   };
 }

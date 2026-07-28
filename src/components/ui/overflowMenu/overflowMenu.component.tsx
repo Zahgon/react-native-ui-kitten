@@ -106,49 +106,19 @@ export type OverflowMenuElement = React.ReactElement<OverflowMenuProps>;
 export class OverflowMenu extends React.Component<OverflowMenuProps> {
 
   private get itemsCount(): number {
-    return React.Children.count(this.props.children);
+      throw new Error("STUB");
   }
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const { indicatorBackgroundColor, ...containerParameters } = source;
-
-    return {
-      container: containerParameters,
-      indicator: {
-        backgroundColor: indicatorBackgroundColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderPopoverContentElement = (): MenuElement => {
-    const { eva, children, style, ...menuProps } = this.props;
-
-    return (
-      <Menu
-        {...menuProps}
-        style={styles.menu}
-        initialNumToRender={this.itemsCount}
-        showsVerticalScrollIndicator={false}
-        bounces={false}
-      >
-        {this.props.children}
-      </Menu>
-    );
+      throw new Error("STUB");
   };
 
   public render(): PopoverElement {
-    const { eva, style, children, appearance, ...popoverProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-    const contentElement: MenuElement = this.renderPopoverContentElement();
-
-    return (
-      <Popover
-        {...popoverProps}
-        style={[styles.popover, evaStyle.container, style]}
-      >
-        {contentElement}
-      </Popover>
-    );
+      throw new Error("STUB");
   }
 }
 

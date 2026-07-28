@@ -33,13 +33,6 @@ export type DividerElement = React.ReactElement<DividerProps>;
 export class Divider extends React.Component<DividerProps> {
 
   public render(): React.ReactElement {
-    const { eva, style, ...viewProps } = this.props;
-
-    return (
-      <View
-        {...viewProps}
-        style={[eva.style, style]}
-      />
-    );
+      throw new Error("STUB");
   }
 }

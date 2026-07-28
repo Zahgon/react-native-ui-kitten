@@ -122,132 +122,71 @@ export class Autocomplete extends React.Component<AutocompleteProps, State> {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private get data(): any[] {
-    return React.Children.toArray(this.props.children || []);
+      throw new Error("STUB");
   }
 
   public focus = (): void => {
-    this.inputRef.current?.focus();
+      throw new Error("STUB");
   };
 
   public blur = (): void => {
-    this.inputRef.current?.blur();
+      throw new Error("STUB");
   };
 
   public isFocused = (): boolean => {
-    return this.inputRef.current?.isFocused();
+      throw new Error("STUB");
   };
 
   public clear = (): void => {
-    this.inputRef.current?.clear();
+      throw new Error("STUB");
   };
 
   public componentDidUpdate(prevProps: AutocompleteProps): void {
-    const { listVisible } = this.state;
-    const isChildCountChanged: boolean = this.data.length !== React.Children.count(prevProps.children);
-    const shouldBecomeVisible: boolean = !listVisible && this.isFocused() && isChildCountChanged;
-
-    shouldBecomeVisible && this.setState({ listVisible: shouldBecomeVisible });
+      throw new Error("STUB");
   }
 
   private onInputFocus = (event: NativeSyntheticEvent<TextInputFocusEventData>): void => {
-    this.setOptionsListVisible();
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onAnchorInputFocus = (event: NativeSyntheticEvent<TextInputFocusEventData>): void => {
-    this.inputRefAnchor.current?.blur();
-    this.setOptionsListVisible();
-    this.focus();
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onInputSubmitEditing = (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>): void => {
-    this.setOptionsListInvisible();
-    this.props.onSubmitEditing?.(e);
+      throw new Error("STUB");
   };
 
   private onBackdropPress = (): void => {
-    this.blur();
-    this.inputRefAnchor.current?.blur();
-    this.setOptionsListInvisible();
+      throw new Error("STUB");
   };
 
   private onItemPress = (index: number): void => {
-    if (this.props.onSelect) {
-      this.setOptionsListInvisible();
-      this.props.onSelect(index);
-    }
+      throw new Error("STUB");
   };
 
   private setOptionsListVisible = (): void => {
-    const hasData: boolean = this.data.length > 0;
-    hasData && this.setState({ listVisible: true });
+      throw new Error("STUB");
   };
 
   private setOptionsListInvisible = (): void => {
-    this.setState({ listVisible: false });
+      throw new Error("STUB");
   };
 
   private renderItem = (info: ListRenderItemInfo<AutocompleteItemElement>): AutocompleteItemElement => {
-    return React.cloneElement(info.item, { onPress: () => this.onItemPress(info.index) });
+      throw new Error("STUB");
   };
 
   private renderAnchorInputElement = (props: InputProps): InputElement => {
-    return (
-      <View>
-        <Input
-          {...props}
-          ref={this.inputRefAnchor}
-          testID='@autocomplete/input-anchor'
-          showSoftInputOnFocus={false}
-          onFocus={this.onAnchorInputFocus}
-          onSubmitEditing={this.onInputSubmitEditing}
-        />
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   private renderInputElement = (props: InputProps): InputElement => {
-    return (
-      <View>
-        <Input
-          {...props}
-          ref={this.inputRef}
-          testID='@autocomplete/input'
-          showSoftInputOnFocus={true}
-          autoFocus={true}
-          onFocus={this.onInputFocus}
-          onSubmitEditing={this.onInputSubmitEditing}
-        />
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   public render(): PopoverElement {
-    const { placement, children, testID, ...inputProps } = this.props;
-
-    return (
-      <Popover
-        style={styles.popover}
-        placement={placement}
-        testID={testID}
-        visible={this.state.listVisible}
-        fullWidth={true}
-        anchor={() => this.renderAnchorInputElement(inputProps)}
-        onBackdropPress={this.onBackdropPress}
-      >
-        <View>
-          {this.renderInputElement(inputProps)}
-          <List
-            style={styles.list}
-            keyboardShouldPersistTaps='always'
-            data={this.data}
-            bounces={false}
-            renderItem={this.renderItem}
-          />
-        </View>
-      </Popover>
-    );
+      throw new Error("STUB");
   }
 }
 

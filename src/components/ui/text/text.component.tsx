@@ -84,13 +84,6 @@ export type TextElement = React.ReactElement<TextProps>;
 export class Text extends React.Component<TextProps> {
 
   public render(): React.ReactElement<RNTextProps> {
-    const { eva, style, ...textProps } = this.props;
-
-    return (
-      <RNText
-        {...textProps}
-        style={[eva.style, style]}
-      />
-    );
+      throw new Error("STUB");
   }
 }

@@ -132,74 +132,35 @@ export class TabBar extends React.Component<TabBarProps> {
   private tabIndicatorRef = React.createRef<TabIndicator>();
 
   public scrollToIndex(params: { index: number; animated?: boolean }): void {
-    this.tabIndicatorRef.current?.scrollToIndex(params);
+      throw new Error("STUB");
   }
 
   public scrollToOffset(params: { offset: number; animated?: boolean }): void {
-    this.tabIndicatorRef.current?.scrollToOffset(params);
+      throw new Error("STUB");
   }
 
   private onTabSelect = (index: number): void => {
-    this.props.onSelect?.(index);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      indicatorHeight,
-      indicatorBorderRadius,
-      indicatorBackgroundColor,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      item: {},
-      indicator: {
-        height: indicatorHeight,
-        borderRadius: indicatorBorderRadius,
-        backgroundColor: indicatorBackgroundColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private isTabSelected = (index: number): boolean => {
-    return index === this.props.selectedIndex;
+      throw new Error("STUB");
   };
 
   private renderTabElement = (element: TabElement, index: number): TabElement => {
-    return React.cloneElement(element, {
-      key: index,
-      style: [styles.item, element.props.style],
-      selected: this.isTabSelected(index),
-      onSelect: () => this.onTabSelect(index),
-    });
+      throw new Error("STUB");
   };
 
   private renderTabElements = (source: ChildrenWithProps<TabProps>): TabElement[] => {
-    return React.Children.map(source, this.renderTabElement);
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, testID, indicatorStyle, selectedIndex, children, ...viewProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-    const tabElements: TabElement[] = this.renderTabElements(children);
-
-    return (
-      <View testID={testID}>
-        <View
-          {...viewProps}
-          style={[evaStyle.container, styles.container, style]}
-        >
-          {tabElements}
-        </View>
-        <TabIndicator
-          ref={this.tabIndicatorRef}
-          style={[evaStyle.indicator, indicatorStyle]}
-          selectedPosition={selectedIndex}
-          positions={tabElements.length}
-        />
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

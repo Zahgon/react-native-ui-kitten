@@ -24,11 +24,11 @@ const OFFSET_MAX: number = PI / 6;
 const BaseBezierEasing: EasingFunction = Easing.bezier(0.4, 0.0, 0.7, 1.0);
 
 const StartArcEasing: EasingFunction = (progress: number): number => {
-  return -PI + OFFSET_MIN + (PI - OFFSET_MAX) * BaseBezierEasing(progress);
+    throw new Error("STUB");
 };
 
 const EndArcEasing: EasingFunction = (progress: number): number => {
-  return PI2 - OFFSET_MIN + (-PI + OFFSET_MAX) * BaseBezierEasing(progress);
+    throw new Error("STUB");
 };
 
 const DEFAULT_CONFIG: SpinnerAnimationConfig = {
@@ -77,25 +77,14 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
   }
 
   public stop(): void {
-    super.stop();
-    this.animationValue.setValue(0);
+      throw new Error("STUB");
   }
 
   /**
    * @returns {SpinnerAnimationStyle} - an object that contains container, start and end arcs transform styles.
    */
   public toProps(): SpinnerAnimationStyle {
-    const containerInterpolation: Animated.AnimatedInterpolation<number> = this.createContainerInterpolation();
-    const startArcInterpolation: Animated.AnimatedInterpolation<number> = this.createArcInterpolation(StartArcEasing);
-    const endArcInterpolation: Animated.AnimatedInterpolation<number> = this.createArcInterpolation(EndArcEasing);
-
-    return {
-      container: this.toStyleTransformProp(containerInterpolation),
-      start: this.toStyleTransformProp(startArcInterpolation),
-      end: this.toStyleTransformProp(endArcInterpolation, {
-        transform: [{ translateY: -this.arcSize / 2 }],
-      }),
-    };
+      throw new Error("STUB");
   }
 
   /**
@@ -103,26 +92,15 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
    * @returns an array of frames fitted into animation.
    */
   private createFrameRange = (duration: number): number[] => {
-    const numberOfFrames: number = 60 * duration / 1000;
-
-    return new Array(numberOfFrames).fill(0);
+      throw new Error("STUB");
   };
 
   private createContainerInterpolation = (): Animated.AnimatedInterpolation<number> => {
-    return this.animationValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: [
-        this.toDegValue(OFFSET_MAX + OFFSET_MIN),
-        this.toDegValue((2 * PI2 + OFFSET_MAX + OFFSET_MIN)),
-      ],
-    });
+      throw new Error("STUB");
   };
 
   private createArcInterpolation = (easing: EasingFunction): Animated.AnimatedInterpolation<number> => {
-    return this.animationValue.interpolate({
-      inputRange: this.createArcInterpolationInputRange(),
-      outputRange: this.createArcInterpolationOutputRange(easing),
-    });
+      throw new Error("STUB");
   };
 
   /**
@@ -131,9 +109,7 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
    * @returns a container interpolation input range in a numeric format.
    */
   private createArcInterpolationInputRange = (): number[] => {
-    return this.animationFrames.map((item: number, frame: number): number => {
-      return frame / (this.animationFrames.length - 1);
-    });
+      throw new Error("STUB");
   };
 
   /**
@@ -143,12 +119,7 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
    * @returns an arc interpolation end values eased with an `easing` function in a StyleSheet degree format.
    */
   private createArcInterpolationOutputRange = (easing: EasingFunction): string[] => {
-    return this.animationFrames.map((item: number, frame: number): string => {
-      const progress: number = 2 * frame / (this.animationFrames.length - 1);
-      const boundedProgress: number = Math.min(2.0 - progress, progress);
-
-      return this.toDegValue(easing(boundedProgress));
-    });
+      throw new Error("STUB");
   };
 
   /**
@@ -158,10 +129,7 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
    */
   private toStyleTransformProp = (rotate: Animated.AnimatedInterpolation<number | string>,
     source: ViewStyle = {}): ViewStyle => {
-    const transform = [...(source.transform || []), { rotate }];
-
-    // @ts-ignore: AnimatedInterpolation does not fit RotateTransform type declaration
-    return { ...source, transform };
+      throw new Error("STUB");
   };
 
   /**
@@ -169,6 +137,6 @@ export class SpinnerAnimation extends Animation<SpinnerAnimationConfig, SpinnerA
    * @returns degrees in a StyleSheet format.
    */
   private toDegValue = (source: number): string => {
-    return `${source}deg`;
+      throw new Error("STUB");
   };
 }

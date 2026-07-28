@@ -43,49 +43,14 @@ export type CalendarPickerElement<D> = React.ReactElement<CalendarPickerProps<D>
 export class CalendarPicker<D> extends React.Component<CalendarPickerProps<D>> {
 
   private renderCellElement = (item: CalendarDateInfo<D>, index: number): CalendarPickerCellElement<D> => {
-    const firstRangeItem = !!(item.range & RangeRole.start);
-    const lastRangeItem = !!(item.range & RangeRole.end);
-
-    return (
-      <CalendarPickerCell
-        key={index}
-        date={item}
-        selected={this.props.isItemSelected(item)}
-        disabled={this.props.isItemDisabled(item)}
-        bounding={item.bounding}
-        today={this.props.isItemToday(item)}
-        range={!!item.range}
-        firstRangeItem={firstRangeItem}
-        lastRangeItem={lastRangeItem}
-        onSelect={this.props.onSelect}
-        shouldComponentUpdate={this.props.shouldItemUpdate}
-      >
-        {this.props.children}
-      </CalendarPickerCell>
-    );
+      throw new Error("STUB");
   };
 
   private renderRowElement = (item: CalendarDateInfo<D>[], index: number): CalendarPickerRowElement<D> => {
-    return (
-      <CalendarPickerRow
-        key={index}
-        style={this.props.rowStyle}
-        data={item}
-      >
-        {this.renderCellElement}
-      </CalendarPickerRow>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { data, children, ...viewProps } = this.props;
-
-    return (
-      <View
-        {...viewProps}
-      >
-        {data.map(this.renderRowElement)}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }

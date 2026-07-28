@@ -19,14 +19,6 @@ export type StyleProviderProps = MappingProviderProps & ThemeProviderProps;
 export class StyleProvider extends React.PureComponent<StyleProviderProps> {
 
   public render(): React.ReactNode {
-    const { styles, theme, children } = this.props;
-
-    return (
-      <MappingProvider styles={styles}>
-        <ThemeProvider theme={theme}>
-          {children}
-        </ThemeProvider>
-      </MappingProvider>
-    );
+      throw new Error("STUB");
   }
 }

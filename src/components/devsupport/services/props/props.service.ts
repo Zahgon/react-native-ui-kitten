@@ -99,7 +99,7 @@ const FlexViewCrossStyleValues = [
   'borderWidth',
 ];
 
-export const FlexViewCrossStyleProps: string[] = FlexStyleProps.filter((el) => !FlexViewCrossStyleValues.includes(el));
+export const FlexViewCrossStyleProps: string[] = FlexStyleProps.filter((el) => { throw new Error("STUB"); });
 
 export interface Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -124,32 +124,14 @@ class NativePropsService {
    */
 
   public all(source: Props | undefined, from: string[]): AllOfProps {
-    if (!source) {
-      return {};
-    }
-
-    return from.reduce((acc: Partial<AllOfProps>, prop: string): Partial<AllOfProps> => {
-      return { ...acc, [prop]: source[prop] };
-    }, {});
+      throw new Error("STUB");
   }
 
   /**
    * Retrieves all props included in `from` array, rest props includes in under the `rest` key
    */
   public allWithRest(source: Props | undefined, from: string[]): AllWithRestProps {
-    if (!source) {
-      return { rest: {} };
-    }
-
-    return Object.keys(source).reduce((acc: Partial<AllWithRestProps>, prop: string): Partial<AllWithRestProps> => {
-      const { rest, ...allOf } = acc;
-
-      if (from.includes(prop)) {
-        return { ...allOf, [prop]: source[prop], rest };
-      }
-
-      return { ...allOf, rest: { ...rest, [prop]: source[prop] } };
-    }, {});
+      throw new Error("STUB");
   }
 
   /**
@@ -161,14 +143,7 @@ class NativePropsService {
    * @return {StyleType} - all styles with prefix
    */
   public allWithPrefix(source: StyleType, key: string): StyleType {
-    return Object.keys(source)
-      .filter((styleName: string) => styleName.includes(key))
-      .reduce((obj: StyleType, styleKey: string) => {
-        return {
-          ...obj,
-          [styleKey]: source[styleKey],
-        };
-      }, {});
+      throw new Error("STUB");
   }
 }
 

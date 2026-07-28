@@ -36,39 +36,36 @@ export class NativeDateService extends DateService<Date> {
   protected i18nSettings = fecha.i18n;
 
   constructor(locale: string = LOCALE_DEFAULT, options?: NativeDateServiceOptions) {
-    super();
-    this.options = { ...DEFAULT_OPTIONS, ...options };
-    super.setLocale(this.options.i18n ? locale : LOCALE_DEFAULT);
-    this.setFechaLocaleData(this.options.i18n || EN);
+      throw new Error("STUB");
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public setLocale(locale: string): void {
-    console.warn('Runtime locale is not supported');
+      throw new Error("STUB");
   }
 
   public isValidDateString(date: string, format: string): boolean {
-    return !isNaN(this.parse(date, format).getTime());
+      throw new Error("STUB");
   }
 
   public today(): Date {
-    return new Date();
+      throw new Error("STUB");
   }
 
   public getDate(date: Date): number {
-    return date.getDate();
+      throw new Error("STUB");
   }
 
   public getMonth(date: Date): number {
-    return date.getMonth();
+      throw new Error("STUB");
   }
 
   public getYear(date: Date): number {
-    return date.getFullYear();
+      throw new Error("STUB");
   }
 
   public getDayOfWeek(date: Date): number {
-    return date.getDay();
+      throw new Error("STUB");
   }
 
   /**
@@ -76,28 +73,23 @@ export class NativeDateService extends DateService<Date> {
    * and 0 if from sunday and so on.
    * */
   public getFirstDayOfWeek(): number {
-    return this.options.startDayOfWeek;
+      throw new Error("STUB");
   }
 
   public getMonthName(date: Date, style: TranslationWidth = TranslationWidth.SHORT): string {
-    const index: number = date.getMonth();
-
-    return this.getMonthNameByIndex(index, style);
+      throw new Error("STUB");
   }
 
   public getMonthNameByIndex(index: number, style: TranslationWidth = TranslationWidth.SHORT): string {
-    return this.getFechaMonthNames(style)[index];
+      throw new Error("STUB");
   }
 
   public getDayOfWeekNames(style: TranslationWidth = TranslationWidth.SHORT): string[] {
-    const dayNames: string[] = this.getFechaDayNames(style);
-
-    // avoid mutation of source array
-    return this.shiftDayOfWeekNames([...dayNames], this.options.startDayOfWeek);
+      throw new Error("STUB");
   }
 
   public format(date: Date, format: string): string {
-    return fecha.format(date, format || this.options.format, this.i18nSettings);
+      throw new Error("STUB");
   }
 
   /**
@@ -109,122 +101,82 @@ export class NativeDateService extends DateService<Date> {
   }
 
   public addDay(date: Date, num: number): Date {
-    return this.createDate(date.getFullYear(), date.getMonth(), date.getDate() + num);
+      throw new Error("STUB");
   }
 
   public addMonth(date: Date, num: number): Date {
-    const month: Date = this.createDate(date.getFullYear(), date.getMonth() + num, 1);
-
-    // In case of date has more days than calculated month js Date will change that month to the next one
-    // because of the date overflow.
-    month.setDate(Math.min(date.getDate(), this.getMonthEnd(month).getDate()));
-
-    return month;
+      throw new Error("STUB");
   }
 
   public addYear(date: Date, num: number): Date {
-    return this.createDate(date.getFullYear() + num, date.getMonth(), date.getDate());
+      throw new Error("STUB");
   }
 
   public clone(date: Date): Date {
-    return new Date(date.getTime());
+      throw new Error("STUB");
   }
 
   public compareDates(date1: Date, date2: Date): number {
-    return date1.getTime() - date2.getTime();
+      throw new Error("STUB");
   }
 
   public compareDatesSafe(date1: Date, date2: Date): number {
-    if (this.compareDates(date1, date2) < 0) {
-      return -1;
-    } else if (this.compareDates(date1, date2) > 0) {
-      return 1;
-    } else if (this.compareDates(date1, date2) === 0) {
-      return 0;
-    }
+      throw new Error("STUB");
   }
 
   public createDate(year: number, month: number, date: number): Date {
-    const result = new Date(year, month, date);
-
-    // We need to correct for the fact that JS native Date treats years in range [0, 99] as
-    // abbreviations for 19xx.
-    if (year >= 0 && year < 100) {
-      result.setFullYear(result.getFullYear() - 1900);
-    }
-
-    return result;
+      throw new Error("STUB");
   }
 
   public getMonthEnd(date: Date): Date {
-    return this.createDate(date.getFullYear(), date.getMonth() + 1, 0);
+      throw new Error("STUB");
   }
 
   public getMonthStart(date: Date): Date {
-    return this.createDate(date.getFullYear(), date.getMonth(), 1);
+      throw new Error("STUB");
   }
 
   public getNumberOfDaysInMonth(date: Date): number {
-    return this.getMonthEnd(date).getDate();
+      throw new Error("STUB");
   }
 
   public getYearEnd(date: Date): Date {
-    return this.createDate(date.getFullYear(), 11, 31);
+      throw new Error("STUB");
   }
 
   public getYearStart(date: Date): Date {
-    return this.createDate(date.getFullYear(), 0, 1);
+      throw new Error("STUB");
   }
 
   public isSameDay(date1: Date, date2: Date): boolean {
-    return this.isSameMonth(date1, date2) && date1.getDate() === date2.getDate();
+      throw new Error("STUB");
   }
 
   public isSameMonth(date1: Date, date2: Date): boolean {
-    return this.isSameYear(date1, date2) && date1.getMonth() === date2.getMonth();
+      throw new Error("STUB");
   }
 
   public isSameYear(date1: Date, date2: Date): boolean {
-    return date1.getFullYear() === date2.getFullYear();
+      throw new Error("STUB");
   }
 
   public getId(): string {
-    return 'native';
+      throw new Error("STUB");
   }
 
   protected shiftDayOfWeekNames<T>(value: T[], offset: number): T[] {
-    return value.splice(offset).concat(value);
+      throw new Error("STUB");
   }
 
   private getFechaDayNames(style: TranslationWidth): string[] {
-    switch (style) {
-      case TranslationWidth.SHORT:
-        return this.i18nSettings.dayNamesShort;
-      case TranslationWidth.LONG:
-        return this.i18nSettings.dayNames;
-      default:
-        return;
-    }
+      throw new Error("STUB");
   }
 
   private getFechaMonthNames(style: TranslationWidth): string[] {
-    switch (style) {
-      case TranslationWidth.SHORT:
-        return this.i18nSettings.monthNamesShort;
-      case TranslationWidth.LONG:
-        return this.i18nSettings.monthNames;
-      default:
-        return;
-    }
+      throw new Error("STUB");
   }
 
   private setFechaLocaleData(config: I18nConfig): void {
-    this.i18nSettings = {
-      ...fecha.i18n,
-      dayNames: config.dayNames[TranslationWidth.LONG],
-      dayNamesShort: config.dayNames[TranslationWidth.SHORT],
-      monthNames: config.monthNames[TranslationWidth.LONG],
-      monthNamesShort: config.monthNames[TranslationWidth.SHORT],
-    };
+      throw new Error("STUB");
   }
 }

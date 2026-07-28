@@ -88,85 +88,39 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
   private animation: SpinnerAnimation = new SpinnerAnimation(this.containerSize.height);
 
   private get containerSize(): Size {
-    const { width, height } = StyleSheet.flatten([this.props.eva.style, this.props.style]);
-    // @ts-ignore: width and height are restricted to be a number
-    return new Size(width, height);
+      throw new Error("STUB");
   }
 
   public componentDidMount(): void {
-    if (this.props.animating) {
-      this.startAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentDidUpdate(prevProps: SpinnerProps): void {
-    const animatingChanged: boolean = this.props.animating !== prevProps.animating;
-
-    if (animatingChanged && this.props.animating) {
-      this.startAnimation();
-    }
-
-    if (animatingChanged && !this.props.animating) {
-      this.stopAnimation();
-    }
+      throw new Error("STUB");
   }
 
   public componentWillUnmount(): void {
-    this.animation.release();
+      throw new Error("STUB");
   }
 
   private startAnimation = (): void => {
-    this.animation.start();
+      throw new Error("STUB");
   };
 
   private stopAnimation = (): void => {
-    this.animation.stop();
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: SpinnerAnimationStyle): { start: ArcElementStyle; end: ArcElementStyle } => {
-    const start: ArcElementStyle = {
-      container: source.container,
-      arc: source.start,
-    };
-
-    const end: ArcElementStyle = {
-      container: source.container,
-      arc: source.end,
-      overflow: { top: this.containerSize.height / 2 },
-    };
-
-    return { start, end };
+      throw new Error("STUB");
   };
 
   private renderArcElement = (style: ArcElementStyle, size: Size): React.ReactElement<ViewProps> => {
-    const arcSize: Size = new Size(size.width, size.height / 2);
-
-    return (
-      <Animated.View style={[StyleSheet.absoluteFill, style.container, size]}>
-        <View style={[styles.noOverflow, style.overflow, arcSize]}>
-          <Animated.View style={[style.arc, size]}>
-            <View style={[styles.noOverflow, arcSize]}>
-              <View style={[this.props.eva.style, this.props.style]} />
-            </View>
-          </Animated.View>
-        </View>
-      </Animated.View>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const containerSize: Size = this.containerSize;
-    const evaStyle = this.getComponentStyle(this.animation.toProps());
-
-    return (
-      <View
-        testID={this.props.testID}
-        style={containerSize}
-      >
-        {this.renderArcElement(evaStyle.start, containerSize)}
-        {this.renderArcElement(evaStyle.end, containerSize)}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

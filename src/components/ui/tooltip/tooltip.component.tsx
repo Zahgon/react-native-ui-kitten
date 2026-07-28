@@ -102,77 +102,15 @@ export type TooltipElement = React.ReactElement<TooltipProps>;
 export class Tooltip extends React.Component<TooltipProps> {
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      indicatorBackgroundColor,
-      iconWidth,
-      iconHeight,
-      iconMarginHorizontal,
-      iconTintColor,
-      textMarginHorizontal,
-      textFontSize,
-      textFontWeight,
-      textFontFamily,
-      textColor,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      indicator: {
-        backgroundColor: indicatorBackgroundColor,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        marginHorizontal: iconMarginHorizontal,
-        tintColor: iconTintColor,
-      },
-      text: {
-        marginHorizontal: textMarginHorizontal,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        fontFamily: textFontFamily,
-        color: textColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderPopoverIndicatorElement = (props: ViewProps): React.ReactElement => {
-    const evaStyle = this.getComponentStyle(this.props.eva.style);
-    return (
-      <PopoverIndicator
-        {...props}
-        style={[props.style, evaStyle.indicator]}
-      />
-    );
+      throw new Error("STUB");
   };
 
   public render(): PopoverElement {
-    const { eva, style, accessoryLeft, accessoryRight, children, ...popoverProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <Popover
-        {...popoverProps}
-        style={[evaStyle.container, style]}
-        indicator={this.renderPopoverIndicatorElement}
-      >
-        <View style={styles.content}>
-          <FalsyFC
-            style={evaStyle.icon}
-            component={accessoryLeft}
-          />
-          <FalsyText
-            style={evaStyle.text}
-            component={children}
-          />
-          <FalsyFC
-            style={evaStyle.icon}
-            component={accessoryRight}
-          />
-        </View>
-      </Popover>
-    );
+      throw new Error("STUB");
   }
 }
 

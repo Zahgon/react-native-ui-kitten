@@ -80,125 +80,51 @@ export type SelectItemElement = React.ReactElement<SelectItemProps>;
 export class SelectItem extends React.Component<SelectItemProps> {
 
   private get isMultiSelect(): boolean {
-    if (this.props.descriptor) {
-      return this.props.descriptor.multiSelect;
-    }
-    return false;
+      throw new Error("STUB");
   }
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onFocus = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.FOCUSED]);
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onBlur = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onBlur?.(event);
+      throw new Error("STUB");
   };
 
   private onPress = (event: GestureResponderEvent): void => {
-    this.props.onPress?.(this.props.descriptor, event);
+      throw new Error("STUB");
   };
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private onAccessoryCheckedChange = (): void => {
-    this.props.onPress?.(this.props.descriptor);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (style: StyleType): StyleType => {
-    const { paddingHorizontal, paddingLeft, paddingVertical, backgroundColor } = style;
-
-    const textStyles = PropsService.allWithPrefix(style, 'text');
-    const iconStyles = PropsService.allWithPrefix(style, 'icon');
-
-    return {
-      container: {
-        paddingHorizontal: paddingHorizontal,
-        paddingLeft: paddingLeft,
-        paddingVertical: paddingVertical,
-        backgroundColor: backgroundColor,
-      },
-      text: {
-        marginHorizontal: textStyles.textMarginHorizontal,
-        fontFamily: textStyles.textFontFamily,
-        fontSize: textStyles.textFontSize,
-        fontWeight: textStyles.textFontWeight,
-        color: textStyles.textColor,
-      },
-      icon: {
-        width: iconStyles.iconWidth,
-        height: iconStyles.iconHeight,
-        marginHorizontal: iconStyles.iconMarginHorizontal,
-        tintColor: iconStyles.iconTintColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderAccessory = (evaStyle): CheckBoxElement => {
-    if (!this.isMultiSelect) {
-      return null;
-    }
-
-    return (
-      <CheckBox
-        style={evaStyle}
-        checked={this.props.selected}
-        disabled={this.props.disabled}
-        onChange={this.onAccessoryCheckedChange}
-      />
-    );
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const { eva, style, title, accessoryLeft, accessoryRight, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[styles.container, evaStyle.container, style]}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onPress={this.onPress}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryLeft}
-          fallback={this.renderAccessory(evaStyle.icon)}
-        />
-        <FalsyText
-          style={[styles.text, evaStyle.text]}
-          component={title}
-        />
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryRight}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

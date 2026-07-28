@@ -140,70 +140,31 @@ export class BottomNavigation extends React.Component<BottomNavigationProps> {
   };
 
   private onTabSelect = (index: number): void => {
-    this.props.onSelect?.(index);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const { indicatorHeight, indicatorBackgroundColor, ...containerParameters } = source;
-
-    return {
-      container: containerParameters,
-      indicator: {
-        height: indicatorHeight,
-        backgroundColor: indicatorBackgroundColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderIndicatorElement = (positions: number, style: ViewStyle): TabIndicatorElement => {
-    const { indicatorStyle, selectedIndex } = this.props;
-
-    return (
-      <TabIndicator
-        key={0}
-        style={[style, indicatorStyle]}
-        selectedPosition={selectedIndex}
-        positions={positions}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderTabElement = (element: BottomNavigationTabElement, index: number): BottomNavigationTabElement => {
-    return React.cloneElement(element, {
-      key: index,
-      style: [styles.item, element.props.style],
-      selected: index === this.props.selectedIndex,
-      onSelect: () => this.onTabSelect(index),
-    });
+      throw new Error("STUB");
   };
 
   private renderTabElements = (source: ChildrenWithProps<BottomNavigationTabProps>): BottomNavigationTabElement[] => {
-    return React.Children.map(source, this.renderTabElement);
+      throw new Error("STUB");
   };
 
   private renderComponentChildren = (style: StyleType): React.ReactNodeArray => {
-    const tabElements: BottomNavigationTabElement[] = this.renderTabElements(this.props.children);
-    const hasIndicator: boolean = style.indicator.height > 0;
-
-    return [
-      hasIndicator && this.renderIndicatorElement(tabElements.length, style.indicator),
-      ...tabElements,
-    ];
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, testID } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-    const [indicatorElement, ...tabElements] = this.renderComponentChildren(evaStyle);
-
-    return (
-      <View testID={testID}>
-        {indicatorElement}
-        <View style={[evaStyle.container, styles.elementsContainer, style]}>
-          {tabElements}
-        </View>
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

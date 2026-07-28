@@ -100,81 +100,15 @@ type AlignmentProp = 'start' | 'center';
 export class TopNavigation extends React.Component<TopNavigationProps> {
 
   private getAlignmentDependentStyles = (alignment: AlignmentProp): StyleType => {
-    if (alignment === 'center') {
-      return {
-        container: styles.containerCentered,
-        titleContainer: styles.titleContainerCentered,
-      };
-    }
-
-    return {
-      rightControlsContainer: styles.rightControlsContainerStart,
-    };
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      titleTextAlign,
-      titleFontFamily,
-      titleFontSize,
-      titleFontWeight,
-      titleColor,
-      subtitleTextAlign,
-      subtitleFontFamily,
-      subtitleFontSize,
-      subtitleFontWeight,
-      subtitleColor,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      title: {
-        textAlign: titleTextAlign,
-        fontFamily: titleFontFamily,
-        fontSize: titleFontSize,
-        fontWeight: titleFontWeight,
-        color: titleColor,
-      },
-      subtitle: {
-        textAlign: subtitleTextAlign,
-        fontFamily: subtitleFontFamily,
-        fontSize: subtitleFontSize,
-        color: subtitleColor,
-        fontWeight: subtitleFontWeight,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, title, subtitle, alignment, accessoryLeft, accessoryRight, ...viewProps } = this.props;
-
-    const evaStyles = this.getComponentStyle(eva.style);
-    const alignmentStyles = this.getAlignmentDependentStyles(alignment);
-
-    return (
-      <View
-        style={[evaStyles.container, styles.container, alignmentStyles.container, style]}
-        {...viewProps}
-      >
-        <View style={styles.leftControlContainer}>
-          <FalsyFC component={accessoryLeft} />
-        </View>
-        <View style={alignmentStyles.titleContainer || styles.titleContainer}>
-          <FalsyText
-            style={evaStyles.title}
-            component={title}
-          />
-          <FalsyText
-            style={evaStyles.subtitle}
-            component={subtitle}
-          />
-        </View>
-        <View style={[styles.rightControlsContainer, alignmentStyles.rightControlsContainer]}>
-          <FalsyFC component={accessoryRight} />
-        </View>
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

@@ -28,14 +28,6 @@ export interface ThemeProviderProps {
 export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
   public render(): React.ReactNode {
-    const { theme, children } = this.props;
-
-    return (
-      <ThemeContext.Provider
-        value={ThemeService.create(theme)}
-      >
-        {children}
-      </ThemeContext.Provider>
-    );
+      throw new Error("STUB");
   }
 }

@@ -73,31 +73,22 @@ export class List<ItemT = any> extends React.Component<ListProps<ItemT>> {
   private listRef = React.createRef<FlatList>();
 
   public scrollToEnd = (params?: BaseScrollParams): void => {
-    this.listRef.current?.scrollToEnd(params);
+      throw new Error("STUB");
   };
 
   public scrollToIndex = (params: ScrollToIndexParams): void => {
-    this.listRef.current?.scrollToIndex(params);
+      throw new Error("STUB");
   };
 
   public scrollToOffset(params: ScrollToOffsetParams): void {
-    this.listRef.current?.scrollToOffset(params);
+      throw new Error("STUB");
   }
 
   private keyExtractor = (item: ItemT, index: number): string => {
-    return index.toString();
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement {
-    const { eva, style, keyExtractor, ...flatListProps } = this.props;
-
-    return (
-      <FlatList
-        keyExtractor={keyExtractor || this.keyExtractor}
-        {...flatListProps}
-        ref={this.listRef}
-        style={[eva.style, style]}
-      />
-    );
+      throw new Error("STUB");
   }
 }

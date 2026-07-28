@@ -36,32 +36,18 @@ export class Backdrop extends React.Component<BackdropProps> {
   };
 
   private renderChildElement = (source: ChildElement): ChildElement => {
-    return React.cloneElement(source, {
-      style: [source.props.style, this.props.style],
-    });
+      throw new Error("STUB");
   };
 
   private renderComponentChildren = (source: ChildrenProp): ChildElement[] => {
-    return React.Children.map(source, this.renderChildElement);
+      throw new Error("STUB");
   };
 
   private renderComponent = (): React.ReactElement<ViewProps> => {
-    const componentChildren = this.renderComponentChildren(this.props.children);
-
-    return (
-      <View style={StyleSheet.absoluteFill}>
-        <TouchableOpacity
-          style={[StyleSheet.absoluteFill, this.props.backdropStyle]}
-          activeOpacity={1.0}
-          testID='@backdrop'
-          onPress={this.props.onBackdropPress}
-        />
-        {componentChildren}
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> | undefined {
-    return this.props.visible && this.renderComponent();
+      throw new Error("STUB");
   }
 }

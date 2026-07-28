@@ -39,8 +39,6 @@ export type DrawerItemElement = React.ReactElement<DrawerItemProps>;
 export class DrawerItem extends React.Component<MenuItemProps> {
 
   public render(): MenuItemElement {
-    return (
-      <MenuItem {...this.props} />
-    );
+      throw new Error("STUB");
   }
 }

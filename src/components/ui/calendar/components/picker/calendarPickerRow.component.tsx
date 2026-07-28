@@ -25,16 +25,7 @@ export type CalendarPickerRowElement<D> = React.ReactElement<CalendarPickerRowPr
 export class CalendarPickerRow<D> extends React.Component<CalendarPickerRowProps<D>> {
 
   public render(): React.ReactElement<ViewProps> {
-    const { style, data, children, ...viewProps } = this.props;
-
-    return (
-      <View
-        {...viewProps}
-        style={[styles.container, style]}
-      >
-        {data.map(children)}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

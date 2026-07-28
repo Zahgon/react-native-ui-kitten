@@ -76,104 +76,39 @@ export type MenuItemElement = React.ReactElement<MenuItemProps>;
 export class MenuItem extends React.Component<MenuItemProps> {
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onFocus = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.FOCUSED]);
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onBlur = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onBlur?.(event);
+      throw new Error("STUB");
   };
 
   private onPress = (event: GestureResponderEvent): void => {
-    this.props.onPress?.(this.props.descriptor, event);
+      throw new Error("STUB");
   };
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (style: StyleType): StyleType => {
-    const { paddingHorizontal, paddingVertical, paddingLeft, backgroundColor } = style;
-
-    const titleStyles: StyleType = PropsService.allWithPrefix(style, 'title');
-    const indicatorStyles: StyleType = PropsService.allWithPrefix(style, 'indicator');
-    const iconStyles: StyleType = PropsService.allWithPrefix(style, 'icon');
-
-    return {
-      container: {
-        paddingHorizontal: paddingHorizontal,
-        paddingLeft: paddingLeft,
-        paddingVertical: paddingVertical,
-        backgroundColor: backgroundColor,
-      },
-      title: {
-        marginHorizontal: titleStyles.titleMarginHorizontal,
-        fontFamily: titleStyles.titleFontFamily,
-        fontSize: titleStyles.titleFontSize,
-        fontWeight: titleStyles.titleFontWeight,
-        color: titleStyles.titleColor,
-      },
-      indicator: {
-        width: indicatorStyles.indicatorWidth,
-        backgroundColor: indicatorStyles.indicatorBackgroundColor,
-      },
-      icon: {
-        width: iconStyles.iconWidth,
-        height: iconStyles.iconHeight,
-        marginHorizontal: iconStyles.iconMarginHorizontal,
-        tintColor: iconStyles.iconTintColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactNode {
-    const { eva, style, title, accessoryLeft, accessoryRight, children, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[styles.container, evaStyle.container, style]}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onPress={this.onPress}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        <View style={[StyleSheet.absoluteFill, evaStyle.indicator]} />
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryLeft}
-        />
-        <FalsyText
-          style={[evaStyle.title, styles.title]}
-          component={title}
-        />
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryRight}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

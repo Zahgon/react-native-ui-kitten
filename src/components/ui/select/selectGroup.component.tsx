@@ -45,72 +45,34 @@ export type SelectGroupElement = React.ReactElement<SelectItemProps>;
 export class SelectGroup extends React.Component<SelectGroupProps> {
 
   private get isMultiSelect(): boolean {
-    if (this.props.descriptor) {
-      return this.props.descriptor.multiSelect;
-    }
-    return false;
+      throw new Error("STUB");
   }
 
   private get groupAccessoryState(): CheckBoxProps {
-    const nestedElements = React.Children.toArray(this.props.children) as SelectItemElement[];
-    const selectedElements = nestedElements.filter(el => el.props.selected);
-
-    const indeterminate: boolean = selectedElements.length > 0 && selectedElements.length < nestedElements.length;
-    const checked: boolean = selectedElements.length === nestedElements.length;
-
-    return { checked, indeterminate };
+      throw new Error("STUB");
   }
 
   private get groupAccessoryProps(): CheckBoxProps {
-    return {
-      ...this.createAccessoryProps(this.props),
-      ...this.groupAccessoryState,
-    };
+      throw new Error("STUB");
   }
 
   private createAccessoryProps = (props: SelectItemProps): CheckBoxProps => {
-    return {
-      checked: props.selected,
-      onChange: () => props.onPress?.(props.descriptor),
-    };
+      throw new Error("STUB");
   };
 
   private createGroupedItemProps = (props: SelectItemProps): SelectItemProps => {
-    const accessoryProps: CheckBoxProps = this.createAccessoryProps(props);
-    return {
-      appearance: 'grouped',
-      accessoryLeft: evaProps => this.renderAccessory({ ...evaProps, ...accessoryProps }),
-    };
+      throw new Error("STUB");
   };
 
   private renderAccessory = (props: CheckBoxProps): CheckBoxElement => {
-    if (!this.isMultiSelect) {
-      return null;
-    }
-
-    return (
-      <CheckBox {...props} />
-    );
+      throw new Error("STUB");
   };
 
   private renderGroupedItems = (source: ChildrenWithProps<SelectItemProps>): SelectItemElement[] => {
-    return React.Children.map(source, (item: SelectItemElement, key: number): SelectItemElement => {
-      const groupedProps: SelectItemProps = this.createGroupedItemProps(item.props);
-      return React.cloneElement(item, { key, ...groupedProps, ...item.props });
-    });
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement {
-    const { children, ...itemProps } = this.props;
-
-    return (
-      <>
-        <SelectItem
-          accessoryLeft={evaProps => this.renderAccessory({ ...evaProps, ...this.groupAccessoryProps })}
-          {...itemProps}
-        />
-        {this.renderGroupedItems(children)}
-      </>
-    );
+      throw new Error("STUB");
   }
 }

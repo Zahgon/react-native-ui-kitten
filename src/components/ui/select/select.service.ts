@@ -15,91 +15,58 @@ export class SelectService {
   public selectItem = (multiSelect: boolean,
     descriptor: SelectItemDescriptor,
     selected: IndexPath[]): IndexPath | IndexPath[] => {
-
-    if (multiSelect) {
-      return this.createMultiSelectIndices(descriptor, selected);
-    }
-    return descriptor.index;
+      throw new Error("STUB");
   };
 
   public toStringSelected = (selected: IndexPath[]): string => {
-    if (!Array.isArray(selected)) {
-      return '';
-    }
-
-    const options: string[] = selected.map((index: IndexPath): string => {
-      return `Option ${index.toString()}`;
-    });
-
-    return options.join(SEPARATOR);
+      throw new Error("STUB");
   };
 
   public isSelected = (descriptor: SelectItemDescriptor, selected: IndexPath[]): boolean => {
-    if (descriptor.multiSelect && this.isGroup(descriptor)) {
-      return this.containsSomeFromGroup(descriptor.index, selected);
-    }
-    return this.contains(descriptor.index, selected);
+      throw new Error("STUB");
   };
 
   public isDisabled = (descriptor: SelectItemDescriptor): boolean => {
-    return !descriptor.multiSelect && this.isGroup(descriptor);
+      throw new Error("STUB");
   };
 
   public createDescriptorForElement = (element: SelectItemElement,
     multiSelect: boolean,
     index: number): SelectItemDescriptor => {
-
-    const groupIndices = React.Children.map(element.props.children, ((child: SelectItemElement, row: number) => {
-      return new IndexPath(row, index);
-    }));
-
-    return { multiSelect, groupIndices, index: new IndexPath(index) };
+      throw new Error("STUB");
   };
 
   public createDescriptorForNestedElement = (element: SelectItemElement,
     descriptor: SelectItemDescriptor,
     index: number): SelectItemDescriptor => {
-
-    return {
-      ...descriptor,
-      index: new IndexPath(index, descriptor.index.row),
-      groupIndices: [],
-    };
+      throw new Error("STUB");
   };
 
   private createMultiSelectIndices = (descriptor: SelectItemDescriptor, selected: IndexPath[]): IndexPath[] => {
-    const isIndexSelected: boolean = this.isSelected(descriptor, selected);
-    return !isIndexSelected ? this.addIndex(descriptor, selected) : this.removeIndex(descriptor, selected);
+      throw new Error("STUB");
   };
 
   private isGroup = (descriptor: SelectItemDescriptor): boolean => {
-    return descriptor.groupIndices && descriptor.groupIndices.length > 0;
+      throw new Error("STUB");
   };
 
   private createGroupIndices = (descriptor: SelectItemDescriptor): IndexPath[] => {
-    return this.isGroup(descriptor) ? descriptor.groupIndices : [descriptor.index];
+      throw new Error("STUB");
   };
 
   private addIndex = (descriptor: SelectItemDescriptor, selected: IndexPath[]): IndexPath[] => {
-    return [...selected, ...this.createGroupIndices(descriptor)];
+      throw new Error("STUB");
   };
 
   private removeIndex = (descriptor: SelectItemDescriptor, selected: IndexPath[]): IndexPath[] => {
-    const groupIndices: IndexPath[] = this.createGroupIndices(descriptor);
-    return selected.filter((selectedIndex: IndexPath): boolean => {
-      return !this.contains(selectedIndex, groupIndices);
-    });
+      throw new Error("STUB");
   };
 
   private contains = (index: IndexPath, selected: IndexPath[]): boolean => {
-    return selected.some((selectedIndex: IndexPath): boolean => {
-      return selectedIndex.equals(index);
-    });
+      throw new Error("STUB");
   };
 
   private containsSomeFromGroup = (index: IndexPath, selected: IndexPath[]): boolean => {
-    return selected.some((selectedIndex: IndexPath): boolean => {
-      return selectedIndex.section === index.row;
-    });
+      throw new Error("STUB");
   };
 }

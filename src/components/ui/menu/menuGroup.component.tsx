@@ -82,130 +82,67 @@ export class MenuGroup extends React.Component<MenuGroupProps, State> {
   }
 
   public componentDidUpdate(prevProps: Readonly<MenuGroupProps>, prevState: Readonly<State>): void {
-    const submenuHeightChanged = this.state.submenuHeight !== prevState.submenuHeight;
-    if (submenuHeightChanged && this.hasSubmenu && this.initiallyExpanded) {
-      this.expandAnimation.setValue(this.state.submenuHeight);
-    }
+      throw new Error("STUB");
   }
 
   private get hasSubmenu(): boolean {
-    return React.Children.count(this.props.children) > 0;
+      throw new Error("STUB");
   }
 
   private get shouldMeasureSubmenu(): boolean {
-    return this.state.submenuHeight === 1;
+      throw new Error("STUB");
   }
 
   private get expandAnimationValue(): number {
-    // @ts-ignore - private api, but let's us avoid creating animation listeners.
-    // `this.expandAnimation.addListener`
-    return this.expandAnimation._value;
+      throw new Error("STUB");
   }
 
   private get expandToRotateInterpolation(): Animated.AnimatedInterpolation<string> {
-    return this.expandAnimation.interpolate({
-      inputRange: [-this.state.submenuHeight, CHEVRON_DEG_EXPANDED],
-      outputRange: [`${CHEVRON_DEG_COLLAPSED}deg`, `${CHEVRON_DEG_EXPANDED}deg`],
-    });
+      throw new Error("STUB");
   }
 
   private get submenuStyle(): ViewStyle {
-    // @ts-ignore - issue of `@types/react-native` package
-    return this.shouldMeasureSubmenu ? styles.outscreen : { height: this.expandAnimation };
+      throw new Error("STUB");
   }
 
   private get defaultItemProps(): MenuItemProps {
-    return { appearance: 'grouped' };
+      throw new Error("STUB");
   }
 
   private onPress = (descriptor: MenuItemDescriptor, event: GestureResponderEvent): void => {
-    if (this.hasSubmenu) {
-      this.initiallyExpanded = false;
-
-      const expandValue: number = this.expandAnimationValue > 0 ? 0 : this.state.submenuHeight;
-      this.createExpandAnimation(expandValue).start();
-      this.props.onPress?.(descriptor, event);
-    }
+      throw new Error("STUB");
   };
 
   private onSubmenuMeasure = (frame: Frame): void => {
-    this.setState({ submenuHeight: frame.size.height });
+      throw new Error("STUB");
   };
 
   private createExpandAnimation = (toValue: number): Animated.CompositeAnimation => {
-    return Animated.timing(this.expandAnimation, {
-      toValue: toValue,
-      duration: CHEVRON_ANIM_DURATION,
-      useNativeDriver: false,
-    });
+      throw new Error("STUB");
   };
 
   private renderAccessoryIfNeeded = (evaProps: Partial<ImageProps>): React.ReactElement => {
-    if (!this.hasSubmenu) {
-      return null;
-    }
-
-    const style = StyleSheet.flatten(evaProps.style);
-
-    return (
-      <Animated.View style={{ transform: [{ rotate: this.expandToRotateInterpolation }] }}>
-        <ChevronDown
-          {...evaProps}
-          fill={style.tintColor as string}
-        />
-      </Animated.View>
-    );
+      throw new Error("STUB");
   };
 
   private renderItemsWithDefaultProps = (): React.ReactNode => {
-    return React.Children.map(this.props.children, (item: MenuItemElement): MenuItemElement => {
-      return React.cloneElement(item, this.defaultItemProps, null);
-    });
+      throw new Error("STUB");
   };
 
   private renderGroupedItems = (evaStyle): React.ReactElement<ViewProps> => {
-    return (
-      <Animated.View style={[styles.submenu, this.submenuStyle, evaStyle]}>
-        {this.renderItemsWithDefaultProps()}
-      </Animated.View>
-    );
+      throw new Error("STUB");
   };
 
   private renderMeasuringGroupedItems = (evaStyle): MeasuringElement => {
-    return (
-      <MeasureElement
-        onMeasure={this.onSubmenuMeasure}
-      >
-        {this.renderGroupedItems(evaStyle)}
-      </MeasureElement>
-    );
+      throw new Error("STUB");
   };
 
   private renderGroupedItemsIfNeeded = (evaStyle): React.ReactNode => {
-    if (!this.hasSubmenu) {
-      return null;
-    }
-
-    if (this.shouldMeasureSubmenu) {
-      return this.renderMeasuringGroupedItems(evaStyle);
-    }
-
-    return this.renderGroupedItems(evaStyle);
+      throw new Error("STUB");
   };
 
   public render(): React.ReactNode {
-    const { children, ...itemProps } = this.props;
-
-    return (
-      <>
-        <MenuItem
-          accessoryRight={this.renderAccessoryIfNeeded}
-          {...itemProps}
-          onPress={this.onPress}
-        />
-        {this.renderGroupedItemsIfNeeded({})}
-      </>
-    );
+      throw new Error("STUB");
   }
 }
 

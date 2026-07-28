@@ -145,48 +145,10 @@ export type DrawerElement = React.ReactElement<DrawerProps>;
 export class Drawer extends React.Component<DrawerProps> {
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      headerPaddingHorizontal,
-      headerPaddingVertical,
-      footerPaddingHorizontal,
-      footerPaddingVertical,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      header: {
-        paddingHorizontal: headerPaddingHorizontal,
-        paddingVertical: headerPaddingVertical,
-      },
-      footer: {
-        paddingHorizontal: footerPaddingHorizontal,
-        paddingVertical: footerPaddingVertical,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement {
-    const { eva, style, header, footer, ...menuProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <>
-        <FalsyFC
-          style={evaStyle.header}
-          component={header}
-        />
-        <Menu
-          style={[evaStyle.container, style]}
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-          {...menuProps}
-        />
-        <FalsyFC
-          style={evaStyle.footer}
-          component={footer}
-        />
-      </>
-    );
+      throw new Error("STUB");
   }
 }

@@ -10,14 +10,6 @@ export interface MappingProviderProps {
 export class MappingProvider extends React.PureComponent<MappingProviderProps> {
 
   public render(): React.ReactNode {
-    const { styles, children } = this.props;
-
-    return (
-      <MappingContext.Provider
-        value={styles}
-      >
-        {children}
-      </MappingContext.Provider>
-    );
+      throw new Error("STUB");
   }
 }

@@ -148,52 +148,20 @@ export class RangeDatepicker<D = Date> extends BaseDatepickerComponent<RangeDate
   }
 
   private get calendarProps(): RangeCalendarProps<D> {
-    return {
-      min: this.props.min,
-      max: this.props.max,
-      range: this.props.range,
-      initialVisibleDate: this.props.initialVisibleDate,
-      dateService: this.props.dateService,
-      boundingMonth: this.props.boundingMonth,
-      startView: this.props.startView,
-      filter: this.props.filter,
-      title: this.props.title,
-      onSelect: this.props.onSelect,
-      renderDay: this.props.renderDay,
-      renderMonth: this.props.renderMonth,
-      renderYear: this.props.renderYear,
-      renderFooter: this.props.renderFooter,
-      renderArrowRight: this.props.renderArrowRight,
-      renderArrowLeft: this.props.renderArrowLeft,
-      onVisibleDateChange: this.props.onVisibleDateChange,
-    };
+      throw new Error("STUB");
   }
 
   public clear = (): void => {
-    this.props.onSelect?.({});
+      throw new Error("STUB");
   };
 
   // BaseDatepickerComponent
 
   protected getComponentTitle(): RenderProp<TextProps> | React.ReactText {
-    const { startDate, endDate } = this.props.range;
-
-    if (startDate || endDate) {
-      const start: string = startDate ? this.props.dateService.format(startDate, null) : '';
-      const end: string = endDate ? this.props.dateService.format(endDate, null) : '';
-
-      return `${start} - ${end}`;
-    } else {
-      return this.props.placeholder;
-    }
+      throw new Error("STUB");
   }
 
   protected renderCalendar(): RangeCalendarElement<D> {
-    return (
-      <RangeCalendar
-        ref={this.calendarRef}
-        {...this.calendarProps}
-      />
-    );
+      throw new Error("STUB");
   }
 }

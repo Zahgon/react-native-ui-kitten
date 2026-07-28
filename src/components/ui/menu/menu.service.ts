@@ -9,18 +9,11 @@ export interface MenuItemDescriptor {
 export class MenuService {
 
   public createDescriptorForElement = (element: React.ReactElement, index: number): MenuItemDescriptor => {
-    const groupIndices = React.Children.map(element.props.children, ((child: React.ReactElement, row: number) => {
-      return new IndexPath(row, index);
-    }));
-
-    return { groupIndices, index: new IndexPath(index) };
+      throw new Error("STUB");
   };
 
   public createDescriptorForNestedElement =
   (groupDescriptor: MenuItemDescriptor, index: number): MenuItemDescriptor => {
-    return {
-      index: new IndexPath(index, groupDescriptor.index.row),
-      groupIndices: null,
-    };
+      throw new Error("STUB");
   };
 }

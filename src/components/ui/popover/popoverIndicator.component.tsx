@@ -20,34 +20,11 @@ export type PopoverIndicatorElement = React.ReactElement<PopoverIndicatorProps>;
 export class PopoverIndicator extends React.Component<PopoverIndicatorProps> {
 
   private getComponentStyle = (source: StyleProp<ViewStyle>): StyleType => {
-    const flatStyle: ViewStyle = StyleSheet.flatten(source);
-
-    return {
-      container: {
-        // @ts-ignore: `width` is restricted to be a number
-        borderLeftWidth: flatStyle.width,
-        // @ts-ignore: `width` is restricted to be a number
-        borderRightWidth: flatStyle.width,
-        // @ts-ignore: `height` is restricted to be a number
-        borderBottomWidth: flatStyle.height,
-        borderBottomColor: flatStyle.backgroundColor,
-        borderLeftColor: 'transparent',
-        borderRightColor: 'transparent',
-        backgroundColor: 'transparent',
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { style, ...props } = this.props;
-    const evaStyle = this.getComponentStyle(style);
-
-    return (
-      <View
-        {...props}
-        style={[style, styles.container, evaStyle.container]}
-      />
-    );
+      throw new Error("STUB");
   }
 }
 

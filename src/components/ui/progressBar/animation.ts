@@ -42,7 +42,7 @@ export class ProgressBarAnimation extends Animation<ProgressBarAnimationConfig, 
   }
 
   public setBarWidth(value: number): void {
-    this.barWidth = value;
+      throw new Error("STUB");
   }
 
   protected get animation(): Animated.CompositeAnimation {
@@ -56,26 +56,18 @@ export class ProgressBarAnimation extends Animation<ProgressBarAnimationConfig, 
   }
 
   public startDeterminate(toValue: number, callback?: Animated.EndCallback): void {
-    this.toValue = toValue;
-    super.start(callback);
+      throw new Error("STUB");
   }
 
   public stop(): void {
-    super.stop();
+      throw new Error("STUB");
   }
 
   public toProps(): ProgressBarAnimationStyle {
-    return {
-      transform: [
-        { translateX: this.createTranslateXInterpolation() },
-      ],
-    };
+      throw new Error("STUB");
   }
 
   private createTranslateXInterpolation = (): Animated.AnimatedInterpolation<number> => {
-    return this.animationValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: [-this.barWidth, 0],
-    });
+      throw new Error("STUB");
   };
 }

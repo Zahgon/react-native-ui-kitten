@@ -51,24 +51,6 @@ export interface FalsyTextProps extends Omit<TextProps, 'children'> {
 export class FalsyText extends React.Component<FalsyTextProps> {
 
   public render(): React.ReactElement {
-    const { component, ...textProps } = this.props;
-
-    if (!component) {
-      return null;
-    }
-
-    if (React.isValidElement(component)) {
-      return React.cloneElement(component, textProps as TextProps);
-    }
-
-    if (typeof component === 'function') {
-      return React.createElement(component, textProps as TextProps);
-    }
-
-    return (
-      <Text {...textProps}>
-        {component}
-      </Text>
-    );
+      throw new Error("STUB");
   }
 }

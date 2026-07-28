@@ -102,12 +102,7 @@ export class ApplicationProvider extends React.Component<ApplicationProviderProp
   private schemaProcessor: SchemaProcessor = new SchemaProcessor();
 
   constructor(props: ApplicationProviderProps) {
-    super(props);
-
-    if (!this.state.styles) {
-      const { mapping, customMapping } = this.props as EvaRuntimeProcessingProps;
-      this.state.styles = this.createStyles(mapping, customMapping);
-    }
+      throw new Error("STUB");
   }
 
   private createStyles = (mapping: SchemaType, custom: CustomSchemaType): ThemeStyleType => {
@@ -116,13 +111,6 @@ export class ApplicationProvider extends React.Component<ApplicationProviderProp
   };
 
   public render(): React.ReactNode {
-    return (
-      <StyleProvider
-        theme={this.props.theme}
-        styles={this.state.styles}
-      >
-        {this.props.children}
-      </StyleProvider>
-    );
+      throw new Error("STUB");
   }
 }

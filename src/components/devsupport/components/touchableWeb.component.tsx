@@ -31,14 +31,7 @@ export type TouchableWebElement = React.ReactElement<TouchableWebProps>;
 export class TouchableWeb extends React.Component<TouchableWebProps> {
 
   public render(): React.ReactElement {
-    const { style, ...touchableProps } = this.props;
-
-    return (
-      <TouchableWithoutFeedback
-        {...touchableProps}
-        style={[styles.container, style]}
-      />
-    );
+      throw new Error("STUB");
   }
 }
 

@@ -91,7 +91,7 @@ type StyledComponent = any;
  */
 export const styled = (name: string): StyledComponent => {
   return (component: WrappedComponent): StyledComponent => {
-    return styleInjector(component, name);
+      throw new Error("STUB");
   };
 };
 
@@ -118,7 +118,7 @@ const styleInjector = (Component: WrappedComponent, name: string): StyledCompone
     };
 
     private onDispatch = (interaction: Interaction[]): void => {
-      this.setState({ interaction });
+        throw new Error("STUB");
     };
 
     private withEvaProp = (sourceProps: WrappedComponentProps,
@@ -154,27 +154,12 @@ const styleInjector = (Component: WrappedComponent, name: string): StyledCompone
     };
 
     public render(): React.ReactElement {
-      return (
-        <MappingContext.Consumer>
-          {(style: ThemeStyleType): React.ReactElement => (
-            <ThemeContext.Consumer>
-              {(theme: ThemeType): React.ReactElement => {
-                return this.renderWrappedElement(style, theme);
-              }}
-            </ThemeContext.Consumer>
-          )}
-        </MappingContext.Consumer>
-      );
+        throw new Error("STUB");
     }
   }
 
   const WrappingElement = (props: WrappedComponentProps, ref: React.Ref<React.ReactInstance>): React.ReactElement => {
-    return (
-      <Wrapper
-        {...props}
-        forwardedRef={ref}
-      />
-    );
+      throw new Error("STUB");
   };
 
   const ResultComponent = React.forwardRef<React.ReactInstance, PrivateRefProps>(WrappingElement);

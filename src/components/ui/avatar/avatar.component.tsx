@@ -77,33 +77,11 @@ export class Avatar extends React.Component<AvatarProps> {
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const { roundCoefficient, ...containerParameters } = source;
-
-    // @ts-ignore: avoid checking `containerParameters`
-    const baseStyle: ImageStyle = StyleSheet.flatten([
-      containerParameters,
-      this.props.style,
-    ]);
-
-    // @ts-ignore: rhs operator is restricted to be number
-    const borderRadius: number = roundCoefficient * baseStyle.height;
-
-    return {
-      borderRadius,
-      ...baseStyle,
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement {
-    const { eva, ImageComponent, ...imageProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <ImageComponent
-        {...imageProps}
-        style={[styles.image, evaStyle]}
-      />
-    );
+      throw new Error("STUB");
   }
 }
 

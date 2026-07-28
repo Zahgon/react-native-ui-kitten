@@ -225,284 +225,107 @@ export class Select extends React.Component<SelectProps, State> {
   private expandAnimation: Animated.Value = new Animated.Value(0);
 
   private get isMultiSelect(): boolean {
-    return this.props.multiSelect;
+      throw new Error("STUB");
   }
 
   private get data(): Array<Exclude<ReactNode, boolean | null | undefined>> {
-    return React.Children.toArray(this.props.children || []);
+      throw new Error("STUB");
   }
 
   private get selectedIndices(): IndexPath[] {
-    if (!this.props.selectedIndex) {
-      return [];
-    }
-    return Array.isArray(this.props.selectedIndex) ? this.props.selectedIndex : [this.props.selectedIndex];
+      throw new Error("STUB");
   }
 
   private get expandToRotateInterpolation(): Animated.AnimatedInterpolation<string> {
-    return this.expandAnimation.interpolate({
-      inputRange: [CHEVRON_DEG_COLLAPSED, CHEVRON_DEG_EXPANDED],
-      outputRange: [`${CHEVRON_DEG_COLLAPSED}deg`, `${CHEVRON_DEG_EXPANDED}deg`],
-    });
+      throw new Error("STUB");
   }
 
   public focus = (): void => {
-    this.setOptionsListVisible();
+      throw new Error("STUB");
   };
 
   public blur = (): void => {
-    this.setOptionsListInvisible();
+      throw new Error("STUB");
   };
 
   public isFocused = (): boolean => {
-    return this.state.listVisible;
+      throw new Error("STUB");
   };
 
   public clear = (): void => {
-    this.props.onSelect?.(null);
+      throw new Error("STUB");
   };
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onPress = (): void => {
-    this.setOptionsListVisible();
+      throw new Error("STUB");
   };
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private onItemPress = (descriptor: SelectItemDescriptor): void => {
-    if (this.props.onSelect) {
-      const selectedIndices = this.service.selectItem(this.isMultiSelect, descriptor, this.selectedIndices);
-      !this.isMultiSelect && this.setOptionsListInvisible();
-      this.props.onSelect(selectedIndices);
-    }
+      throw new Error("STUB");
   };
 
   private onBackdropPress = (): void => {
-    this.setOptionsListInvisible();
+      throw new Error("STUB");
   };
 
   private onListVisible = (): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.createExpandAnimation(-CHEVRON_DEG_COLLAPSED).start(() => {
-      this.props.onFocus?.(null);
-    });
+      throw new Error("STUB");
   };
 
   private onListInvisible = (): void => {
-    this.props.eva.dispatch([]);
-    this.createExpandAnimation(CHEVRON_DEG_EXPANDED).start(() => {
-      this.props.onBlur?.(null);
-    });
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (style: StyleType): StyleType => {
-    const {
-      textMarginHorizontal,
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-      textColor,
-      placeholderColor,
-      placeholderFontSize,
-      placeholderFontWeight,
-      placeholderFontFamily,
-      iconWidth,
-      iconHeight,
-      iconMarginHorizontal,
-      iconTintColor,
-      labelColor,
-      labelFontSize,
-      labelMarginBottom,
-      labelFontWeight,
-      labelFontFamily,
-      captionColor,
-      captionFontSize,
-      captionFontWeight,
-      captionFontFamily,
-      captionIconWidth,
-      captionIconHeight,
-      captionIconMarginRight,
-      captionIconTintColor,
-      popoverMaxHeight,
-      popoverBorderRadius,
-      popoverBorderColor,
-      popoverBorderWidth,
-      ...inputParameters
-    } = style;
-
-    return {
-      input: inputParameters,
-      text: {
-        marginHorizontal: textMarginHorizontal,
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        color: textColor,
-      },
-      placeholder: {
-        marginHorizontal: textMarginHorizontal,
-        fontSize: placeholderFontSize,
-        fontWeight: placeholderFontWeight,
-        fontFamily: placeholderFontFamily,
-        color: placeholderColor,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        marginHorizontal: iconMarginHorizontal,
-        tintColor: iconTintColor,
-      },
-      label: {
-        marginBottom: labelMarginBottom,
-        fontSize: labelFontSize,
-        fontWeight: labelFontWeight,
-        fontFamily: labelFontFamily,
-        color: labelColor,
-      },
-      caption: {
-        fontSize: captionFontSize,
-        fontWeight: captionFontWeight,
-        fontFamily: captionFontFamily,
-        color: captionColor,
-      },
-      popover: {
-        maxHeight: popoverMaxHeight,
-        borderRadius: popoverBorderRadius,
-        borderWidth: popoverBorderWidth,
-        borderColor: popoverBorderColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private setOptionsListVisible = (): void => {
-    const hasData: boolean = this.data.length > 0;
-    hasData && this.setState({ listVisible: true }, this.onListVisible);
+      throw new Error("STUB");
   };
 
   private setOptionsListInvisible = (): void => {
-    this.setState({ listVisible: false }, this.onListInvisible);
+      throw new Error("STUB");
   };
 
   private createExpandAnimation = (toValue: number): Animated.CompositeAnimation => {
-    return Animated.timing(this.expandAnimation, {
-      toValue,
-      duration: CHEVRON_ANIM_DURATION,
-      useNativeDriver: Platform.OS !== 'web',
-    });
+      throw new Error("STUB");
   };
 
   private cloneItemWithProps = (el: SelectItemElement, props: SelectItemProps): SelectItemElement => {
-    const nestedElements = React.Children.map(el.props.children, (nestedEl: SelectItemElement, index: number) => {
-      const descriptor = this.service.createDescriptorForNestedElement(nestedEl, props.descriptor, index);
-      const selected: boolean = this.service.isSelected(descriptor, this.selectedIndices);
-
-      return this.cloneItemWithProps(nestedEl, { ...props, descriptor, selected, disabled: false });
-    });
-
-    return React.cloneElement(el, { ...props, ...el.props }, nestedElements);
+      throw new Error("STUB");
   };
 
   private renderItem = (info: ListRenderItemInfo<SelectItemElement>): SelectItemElement => {
-    const descriptor = this.service.createDescriptorForElement(info.item, this.isMultiSelect, info.index);
-    const selected: boolean = this.service.isSelected(descriptor, this.selectedIndices);
-    const disabled: boolean = this.service.isDisabled(descriptor);
-
-    return this.cloneItemWithProps(info.item, { descriptor, selected, disabled, onPress: this.onItemPress });
+      throw new Error("STUB");
   };
 
   private renderDefaultIconElement = (evaStyle): React.ReactElement => {
-    const { tintColor, ...svgStyle } = evaStyle;
-    return (
-      <Animated.View style={{ transform: [{ rotate: this.expandToRotateInterpolation }] }}>
-        <ChevronDown
-          style={svgStyle}
-          fill={tintColor}
-        />
-      </Animated.View>
-    );
+      throw new Error("STUB");
   };
 
   private renderInputElement = (props: SelectProps, evaStyle): TouchableWebElement => {
-    const value = props.value || this.service.toStringSelected(this.selectedIndices);
-    const textStyle: TextStyle = value && evaStyle.text;
-
-    return (
-      <TouchableWeb
-        testID={props.testID}
-        style={[styles.input, evaStyle.input]}
-        onPress={this.onPress}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-        disabled={props.disabled}
-      >
-        <FalsyFC
-          style={evaStyle.icon}
-          component={props.accessoryLeft}
-        />
-        <FalsyText
-          style={[styles.text, evaStyle.placeholder, textStyle]}
-          numberOfLines={1}
-          ellipsizeMode='tail'
-          component={value || props.placeholder}
-        />
-        <FalsyFC
-          style={evaStyle.icon}
-          component={props.accessoryRight}
-          fallback={this.renderDefaultIconElement(evaStyle.icon)}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, label, caption, children, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <View style={style}>
-        <FalsyText
-          style={[styles.label, evaStyle.label]}
-          component={label}
-        />
-        <Popover
-          style={[styles.popover, evaStyle.popover]}
-          visible={this.state.listVisible}
-          fullWidth={true}
-          anchor={() => this.renderInputElement(touchableProps, evaStyle)}
-          onBackdropPress={this.onBackdropPress}
-        >
-          <List
-            style={styles.list}
-            data={this.data}
-            bounces={false}
-            renderItem={this.renderItem}
-          />
-        </Popover>
-        <FalsyText
-          style={[styles.caption, evaStyle.caption]}
-          component={caption}
-        />
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

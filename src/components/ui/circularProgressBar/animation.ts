@@ -51,35 +51,23 @@ export class CircularProgressBarAnimation extends Animation<CircularProgressBarA
   }
 
   public startDeterminate(toValue: number, callback?: Animated.EndCallback): void {
-    this.toValue = toValue;
-    super.start(callback);
+      throw new Error("STUB");
   }
 
   public stop(): void {
-    super.stop();
+      throw new Error("STUB");
   }
 
   public toProps(): AnimationStyle {
-    return {
-      rotateFirstHalf: this.createRotateFirstHalfInterpolation(),
-      rotateSecondHalf: this.createRotateSecondHalfInterpolation(),
-    };
+      throw new Error("STUB");
   }
 
   private createRotateFirstHalfInterpolation = (): Animated.AnimatedInterpolation<string> => {
-    return this.animationValue.interpolate({
-      inputRange: [0, 0.5],
-      outputRange: ['180deg', '360deg'],
-      extrapolate: 'clamp',
-    });
+      throw new Error("STUB");
   };
 
   private createRotateSecondHalfInterpolation = (): Animated.AnimatedInterpolation<string> => {
-    return this.animationValue.interpolate({
-      inputRange: [0.5, 1],
-      outputRange: ['180deg', '360deg'],
-      extrapolate: 'clamp',
-    });
+      throw new Error("STUB");
   };
 
 }

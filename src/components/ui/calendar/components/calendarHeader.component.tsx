@@ -59,110 +59,35 @@ export type CalendarHeaderElement = React.ReactElement<CalendarHeaderProps>;
 export class CalendarHeader extends React.Component<CalendarHeaderProps> {
 
   private renderTitleIcon = (): ChevronDownElement => {
-    const { tintColor, ...svgStyle } = this.props.iconStyle;
-    const rotation = this.props.viewModeId === CalendarViewModes.DATE.id ? 0 : 180;
-
-    return (
-      <ChevronDown
-        style={[styles.headerButtonIcon, svgStyle]}
-        rotation={rotation}
-        fill={tintColor}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderLeftIcon = (): ChevronLeftElement => {
-    const { tintColor, ...svgStyle } = this.props.iconStyle;
-    const IconComponent: React.ComponentType<SvgProps> = RTLService.select(ChevronLeft, ChevronRight);
-
-    return (
-      <IconComponent
-        style={[styles.lateralIcon, svgStyle]}
-        fill={tintColor}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderRightIcon = (): ChevronRightElement => {
-    const { tintColor, ...svgStyle } = this.props.iconStyle;
-    const IconComponent: React.ComponentType<SvgProps> = RTLService.select(ChevronRight, ChevronLeft);
-
-    return (
-      <IconComponent
-        style={[styles.lateralIcon, svgStyle]}
-        fill={tintColor}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderLeftArrow = (): React.ReactElement => {
-    const LeftArrowComponent = this.props.arrowLeftComponent;
-    if (LeftArrowComponent) {
-      return <LeftArrowComponent onPress={this.props.onNavigationLeftPress} />;
-    }
-
-    return (
-      <Button
-        appearance='ghost'
-        accessoryRight={this.renderLeftIcon}
-        onPress={this.props.onNavigationLeftPress}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderRightArrow = (): React.ReactElement => {
-    const RightArrowComponent = this.props.arrowRightComponent;
-    if (RightArrowComponent) {
-      return <RightArrowComponent onPress={this.props.onNavigationRightPress} />;
-    }
-
-    return (
-      <Button
-        appearance='ghost'
-        accessoryRight={this.renderRightIcon}
-        onPress={this.props.onNavigationRightPress}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderLateralNavigationControls = (): React.ReactElement<ViewProps> => {
-    return (
-      <View style={styles.subContainer}>
-        {this.renderLeftArrow()}
-        {this.renderRightArrow()}
-      </View>
-    );
+      throw new Error("STUB");
   };
 
   private renderTitleElement = (props: TextProps): React.ReactElement => {
-    return (
-      <Text
-        {...props}
-        style={[props.style, styles.headerButtonText, this.props.titleStyle]}
-      >
-        {this.props.title}
-      </Text>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { style, titleStyle, onTitlePress, title, lateralNavigationAllowed, viewModeId, ...viewProps } = this.props;
-
-    return (
-      <View
-        {...viewProps}
-        style={[styles.container, style]}
-      >
-        <Button
-          appearance='ghost'
-          accessoryRight={this.renderTitleIcon}
-          onPress={onTitlePress}
-        >
-          {(props) => this.renderTitleElement(props)}
-        </Button>
-        {lateralNavigationAllowed && this.renderLateralNavigationControls()}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

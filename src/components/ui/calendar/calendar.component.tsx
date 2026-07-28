@@ -144,37 +144,22 @@ export class Calendar<D = Date> extends BaseCalendarComponent<CalendarProps<D>, 
   // BaseCalendarComponent
 
   protected createDates(date: D): DateBatch<D> {
-    return this.dataService.createDayPickerData(date);
+      throw new Error("STUB");
   }
 
   protected selectedDate(): D | undefined {
-    return this.props.date;
+      throw new Error("STUB");
   }
 
   protected onDateSelect(date: D): void {
-    this.props.onSelect?.(date);
+      throw new Error("STUB");
   }
 
   protected isDateSelected(date: D): boolean {
-    return this.dateService.isSameDaySafe(date, this.selectedDate());
+      throw new Error("STUB");
   }
 
   protected shouldUpdateDate(props: CalendarPickerCellProps<D>, nextProps: CalendarPickerCellProps<D>): boolean {
-    const dateChanged: boolean = this.dateService.compareDatesSafe(props.date.date, nextProps.date.date) !== 0;
-
-    if (dateChanged) {
-      return true;
-    }
-
-    const selectionChanged: boolean = props.selected !== nextProps.selected;
-    const disablingChanged: boolean = props.disabled !== nextProps.disabled;
-
-    const value: boolean = selectionChanged || disablingChanged;
-
-    if (value) {
-      return true;
-    }
-
-    return props.eva.theme !== nextProps.eva.theme;
+      throw new Error("STUB");
   }
 }

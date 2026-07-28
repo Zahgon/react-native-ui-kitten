@@ -45,44 +45,7 @@ export type MeasuringElement = React.ReactElement;
  * DON'T USE THIS FLAG IF THE COMPONENT RENDERS FIRST TIME OR YOU KNOW `onLayout` WILL BE CALLED.
  */
 export const MeasureElement: React.FC<MeasureElementProps> = (props): MeasuringElement => {
-
-  const ref = React.useRef();
-
-  const bindToWindow = (frame: Frame, window: Frame): Frame => {
-    if (frame.origin.x < window.size.width) {
-      return frame;
-    }
-
-    const boundFrame: Frame = new Frame(
-      frame.origin.x - window.size.width,
-      frame.origin.y,
-      frame.size.width,
-      frame.size.height,
-    );
-
-    return bindToWindow(boundFrame, window);
-  };
-
-  const onUIManagerMeasure = (x: number, y: number, w: number, h: number): void => {
-    if (!w && !h) {
-      measureSelf();
-    } else {
-      const originY = props.shouldUseTopInsets ? y + StatusBar.currentHeight || 0 : y;
-      const frame: Frame = bindToWindow(new Frame(x, originY, w, h), Frame.window());
-      props.onMeasure(frame);
-    }
-  };
-
-  const measureSelf = (): void => {
-    const node: number = findNodeHandle(ref.current);
-    UIManager.measureInWindow(node, onUIManagerMeasure);
-  };
-
-  if (props.force) {
-    measureSelf();
-  }
-
-  return React.cloneElement(props.children, { ref, onLayout: measureSelf });
+    throw new Error("STUB");
 };
 
 MeasureElement.defaultProps = {

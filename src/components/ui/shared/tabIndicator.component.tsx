@@ -35,12 +35,7 @@ export class TabIndicator extends React.Component<TabIndicatorProps> {
   private contentOffset: Animated.Value = new Animated.Value(0);
 
   public componentDidUpdate(): void {
-    const { selectedPosition: index } = this.props;
-
-    this.scrollToIndex({
-      index,
-      animated: true,
-    });
+      throw new Error("STUB");
   }
 
   /**
@@ -52,10 +47,7 @@ export class TabIndicator extends React.Component<TabIndicatorProps> {
    * }
    */
   public scrollToIndex(params: { index: number; animated?: boolean }): void {
-    const { index, ...rest } = params;
-    const offset: number = this.indicatorWidth * index;
-
-    this.scrollToOffset({ offset, ...rest });
+      throw new Error("STUB");
   }
 
   /**
@@ -67,61 +59,26 @@ export class TabIndicator extends React.Component<TabIndicatorProps> {
    * }
    */
   public scrollToOffset(params: { offset: number; animated?: boolean }): void {
-    this.createOffsetAnimation(params).start();
+      throw new Error("STUB");
   }
 
   private createOffsetAnimation = (params: { offset: number; animated?: boolean }): Animated.CompositeAnimation => {
-    return Animated.timing(this.contentOffset, {
-      toValue: RTLService.select(params.offset, -params.offset),
-      duration: 200,
-      easing: Easing.linear,
-      useNativeDriver: Platform.OS !== 'web',
-    });
+      throw new Error("STUB");
   };
 
   private onLayout = (event: LayoutChangeEvent): void => {
-    this.indicatorWidth = event.nativeEvent.layout.width;
-
-    this.scrollToOffset({
-      offset: this.indicatorWidth * this.props.selectedPosition,
-      animated: false,
-    });
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (): ViewStyle => {
-    const widthPercent: number = 100 / this.props.positions;
-
-    return {
-      width: `${widthPercent}%`,
-
-      // @ts-ignore: RN has no types for `Animated` styles
-      transform: [{ translateX: this.contentOffset }],
-    };
+      throw new Error("STUB");
   };
 
   private renderIndicatorLine = (style: StyleProp<ViewStyle>): React.ReactElement => {
-    const styles = [{ width: '100%', alignSelf: 'center' }, StyleSheet.flatten(style)] as StyleProp<ViewStyle>;
-    return (
-      <View
-        testID="indicator body"
-        style={styles}
-      />
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { style, ...viewProps } = this.props;
-    const evaStyle: ViewStyle = this.getComponentStyle();
-    const indicatorLine = this.renderIndicatorLine(style);
-
-    return (
-      <Animated.View
-        {...viewProps}
-        style={evaStyle}
-        onLayout={this.onLayout}
-      >
-        {indicatorLine}
-      </Animated.View>
-    );
+      throw new Error("STUB");
   }
 }

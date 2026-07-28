@@ -51,13 +51,6 @@ export type LayoutElement = React.ReactElement<LayoutProps>;
 export class Layout extends React.Component<LayoutProps> {
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, ...viewProps } = this.props;
-
-    return (
-      <View
-        {...viewProps}
-        style={[eva.style, style]}
-      />
-    );
+      throw new Error("STUB");
   }
 }

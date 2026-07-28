@@ -42,8 +42,6 @@ export type DrawerGroupElement = React.ReactElement<DrawerGroupProps>;
 export class DrawerGroup extends React.Component<DrawerGroupProps> {
 
   public render(): MenuGroupElement {
-    return (
-      <MenuGroup {...this.props} />
-    );
+      throw new Error("STUB");
   }
 }

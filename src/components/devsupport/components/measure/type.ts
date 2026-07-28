@@ -18,10 +18,7 @@ export class Point {
   }
 
   public equals(other: Point): boolean {
-    if (!other) {
-      return false;
-    }
-    return this.x === other.x && this.y === other.y;
+      throw new Error("STUB");
   }
 }
 
@@ -37,10 +34,7 @@ export class Size {
   }
 
   public equals(other: Size): boolean {
-    if (!other) {
-      return false;
-    }
-    return this.width === other.width && this.height === other.height;
+      throw new Error("STUB");
   }
 }
 
@@ -69,10 +63,7 @@ export class Frame {
   }
 
   public equals(other: Frame): boolean {
-    if (!other) {
-      return false;
-    }
-    return this.origin.equals(other.origin) && this.size.equals(other.size);
+      throw new Error("STUB");
   }
 
   /**
@@ -151,12 +142,7 @@ export class Frame {
    * Creates new frame centered horizontally to other
    */
   public centerHorizontalOf(other: Frame): Frame {
-    return new Frame(
-      other.origin.x + Math.floor((other.size.width - this.size.width) / 2),
-      this.origin.y,
-      this.size.width,
-      this.size.height,
-    );
+      throw new Error("STUB");
   }
 
   /**
@@ -172,11 +158,6 @@ export class Frame {
   }
 
   public centerOf(other: Frame): Frame {
-    return new Frame(
-      other.origin.x + Math.floor((other.size.width - this.size.width) / 2),
-      other.origin.y + Math.floor((other.size.height - this.size.height) / 2),
-      this.size.width,
-      this.size.height,
-    );
+      throw new Error("STUB");
   }
 }

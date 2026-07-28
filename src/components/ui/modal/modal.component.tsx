@@ -95,75 +95,31 @@ export class Modal extends React.PureComponent<ModalProps, State> {
   };
 
   private get contentFlexPosition(): FlexStyle {
-    const derivedStyle: ViewStyle = StyleSheet.flatten(this.props.style || {});
-    const { x: centerX, y: centerY } = this.state.contentPosition;
-    return { left: derivedStyle.left || centerX, top: derivedStyle.top || centerY };
+      throw new Error("STUB");
   }
 
   public componentDidUpdate(): void {
-    if (this.props.visible && !this.state.forceMeasure) {
-      this.setState({ forceMeasure: true });
-      return;
-    }
+      throw new Error("STUB");
   }
 
   public static getDerivedStateFromProps(props: ModalProps, state: State): State {
-    if (!props.visible) {
-      return {
-        ...state,
-        contentPosition: Point.outscreen(),
-      };
-    }
-    return null;
+      throw new Error("STUB");
   }
 
   private onContentMeasure = (contentFrame: Frame): void => {
-    const displayFrame: Frame = contentFrame.centerOf(Frame.window());
-    this.setState({ contentPosition: displayFrame.origin });
+      throw new Error("STUB");
   };
 
   private renderContentElement = (): React.ReactElement<ViewProps> => {
-    return (
-      <View
-        {...this.props}
-        style={[this.props.style, styles.modalView, this.contentFlexPosition]}
-      />
-    );
+      throw new Error("STUB");
   };
 
   private renderMeasuringContentElement = (): MeasuringElement => {
-    return (
-      <MeasureElement
-        shouldUseTopInsets={ModalService.getShouldUseTopInsets}
-        onMeasure={this.onContentMeasure}
-      >
-        {this.renderContentElement()}
-      </MeasureElement>
-    );
+      throw new Error("STUB");
   };
 
   public render(): React.ReactNode {
-    return this.props.visible && (
-      <RNModal
-        transparent={true}
-        visible={this.props.visible}
-        supportedOrientations={this.props.supportedOrientations}
-        statusBarTranslucent={ModalService.getShouldUseTopInsets}
-        animationType={this.props.animationType}
-        hardwareAccelerated={this.props.hardwareAccelerated}
-        onRequestClose={this.props.onBackdropPress}
-        onShow={this.props.onShow}
-        onDismiss={this.props.onBackdropPress}
-      >
-        <Backdrop
-          visible={this.props.visible}
-          backdropStyle={this.props.backdropStyle}
-          onBackdropPress={this.props.onBackdropPress}
-        >
-          {this.props.shouldUseContainer ? this.renderMeasuringContentElement() : this.props.children}
-        </Backdrop>
-      </RNModal>
-    );
+      throw new Error("STUB");
   }
 }
 

@@ -42,93 +42,27 @@ export type CalendarPickerCellElement<D> = React.ReactElement<CalendarPickerCell
 export class CalendarPickerCell<D> extends React.Component<CalendarPickerCellProps<D>> {
 
   public shouldComponentUpdate(nextProps: CalendarPickerCellProps<D>): boolean {
-    if (nextProps.shouldComponentUpdate) {
-      return nextProps.shouldComponentUpdate(this.props, nextProps);
-    }
-    return true;
+      throw new Error("STUB");
   }
 
   private onPress = (): void => {
-    this.props.onSelect?.(this.props.date);
+      throw new Error("STUB");
   };
 
   private getContainerBorderRadius = (borderRadius: number): StyleType => {
-    const { firstRangeItem, lastRangeItem } = this.props;
-
-    const borderStyle = {
-      borderBottomRightRadius: 0,
-      borderTopRightRadius: 0,
-      borderBottomLeftRadius: 0,
-      borderTopLeftRadius: 0,
-    };
-
-    if (firstRangeItem) {
-      borderStyle.borderBottomLeftRadius = borderRadius;
-      borderStyle.borderTopLeftRadius = borderRadius;
-    }
-
-    if (lastRangeItem) {
-      borderStyle.borderBottomRightRadius = borderRadius;
-      borderStyle.borderTopRightRadius = borderRadius;
-    }
-
-    return borderStyle;
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      contentBorderWidth,
-      contentBorderRadius,
-      contentBorderColor,
-      contentBackgroundColor,
-      contentTextFontSize,
-      contentTextFontWeight,
-      contentTextColor,
-      contentTextFontFamily,
-      borderRadius,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: {
-        ...containerParameters,
-        ...this.getContainerBorderRadius(borderRadius),
-      },
-      contentContainer: {
-        borderWidth: contentBorderWidth,
-        borderRadius: contentBorderRadius,
-        borderColor: contentBorderColor,
-        backgroundColor: contentBackgroundColor,
-      },
-      contentText: {
-        fontSize: contentTextFontSize,
-        fontWeight: contentTextFontWeight,
-        color: contentTextColor,
-        fontFamily: contentTextFontFamily,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderContentElement = (source: ChildrenProp<D>, evaStyle): React.ReactElement => {
-    return source?.(this.props.date, {
-      container: evaStyle.contentContainer,
-      text: evaStyle.contentText,
-    });
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<TouchableOpacityProps> {
-    const { eva, style, date, bounding, children, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWithoutFeedback
-        {...touchableProps}
-        style={[evaStyle.container, styles.container, style]}
-        onPress={this.onPress}
-      >
-        {this.renderContentElement(children, evaStyle)}
-      </TouchableWithoutFeedback>
-    );
+      throw new Error("STUB");
   }
 }
 

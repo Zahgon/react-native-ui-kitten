@@ -39,16 +39,6 @@ export type FalsyFCProps<Props> = Props & {
 export class FalsyFC<Props> extends React.Component<FalsyFCProps<Props>> {
 
   public render(): React.ReactElement {
-    const { component, fallback, ...props } = this.props;
-
-    if (!component) {
-      return fallback || null;
-    }
-
-    if (React.isValidElement(component)) {
-      return React.cloneElement(component, props);
-    }
-
-    return React.createElement(component as RenderFCProp<Props>, props as Props);
+      throw new Error("STUB");
   }
 }

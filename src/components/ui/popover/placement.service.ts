@@ -62,9 +62,7 @@ export class PopoverPlacementService {
     }
 
     return placement.family().find((familyValue: PopoverPlacement): boolean => {
-      const familyFrame = familyValue.frame(options);
-
-      return familyValue.fits(familyFrame, options.bounds);
+        throw new Error("STUB");
     });
   }
 }

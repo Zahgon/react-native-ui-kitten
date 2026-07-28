@@ -92,13 +92,9 @@ export class Offsets {
     const flatStyle: FlexStyle = StyleSheet.flatten(source) || {};
 
     return Object.keys(flatStyle)
-      .filter((key: string): boolean => offsetKeys.includes(key))
+      .filter((key: string): boolean => { throw new Error("STUB"); })
       .reduce((acc: Frame, key: string): Frame => {
-
-        const value: number = flatStyle[key];
-        const offsetValue: Offset | undefined = Offsets.parse(key);
-
-        return offsetValue ? offsetValue.apply(acc, value) : acc;
+          throw new Error("STUB");
       }, Frame.zero());
   }
 
@@ -175,10 +171,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row',
-        alignment: 'flex-start',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -212,10 +205,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row-reverse',
-        alignment: 'flex-start',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -249,10 +239,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row',
-        alignment: 'flex-end',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -286,10 +273,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row-reverse',
-        alignment: 'flex-end',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -328,10 +312,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -374,10 +355,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'row-reverse',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -415,10 +393,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column',
-        alignment: 'flex-start',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -452,10 +427,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column-reverse',
-        alignment: 'flex-start',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -489,10 +461,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column',
-        alignment: 'flex-end',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -526,10 +495,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column-reverse',
-        alignment: 'flex-end',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -568,10 +534,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -614,10 +577,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -656,10 +616,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column-reverse',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -699,10 +656,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column-reverse',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {
@@ -745,10 +699,7 @@ export class PopoverPlacements {
     }
 
     flex(): FlexPlacement {
-      return {
-        direction: 'column',
-        alignment: 'center',
-      };
+        throw new Error("STUB");
     }
 
     parent(): PopoverPlacement {

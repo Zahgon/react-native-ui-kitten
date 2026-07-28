@@ -13,65 +13,60 @@ export abstract class DateService<D> {
   protected locale: string;
 
   public setLocale(locale: string): void {
-    this.locale = locale;
+      throw new Error("STUB");
   }
 
   public compareDatesSafe(date1: D, date2: D): number {
-    if (date1 && date2) {
-      return this.compareDates(date1, date2);
-    } else if (!date1 && !date2) {
-      return 0;
-    }
-    return -1;
+      throw new Error("STUB");
   }
 
   /**
    * Checks if the date is between the start date and the end date.
    * */
   public isBetween(date: D, start: D, end: D): boolean {
-    return this.compareDates(date, start) > 0 && this.compareDates(date, end) < 0;
+      throw new Error("STUB");
   }
 
   /**
    * Checks if the date is between the start date and the end date.
    * */
   public isBetweenSafe(date: D, start: D, end: D): boolean {
-    return date && start && end && this.compareDates(date, start) > 0 && this.compareDates(date, end) < 0;
+      throw new Error("STUB");
   }
 
   /**
    * Checks if the date is between the start date and the end date including bounds.
    * */
   public isBetweenIncluding(date: D, start: D, end: D): boolean {
-    return this.compareDates(date, start) >= 0 && this.compareDates(date, end) <= 0;
+      throw new Error("STUB");
   }
 
   /**
    * Checks if the date is between the start date and the end date including bounds.
    * */
   public isBetweenIncludingSafe(date: D, start: D, end: D): boolean {
-    return date && start && end && this.isBetweenIncluding(date, start, end);
+      throw new Error("STUB");
   }
 
   /**
    * Checks is two dates have the same day.
    * */
   public isSameDaySafe(date1: D, date2: D): boolean {
-    return date1 && date2 && this.isSameDay(date1, date2);
+      throw new Error("STUB");
   }
 
   /**
    * Checks is two dates have the same month.
    * */
   public isSameMonthSafe(date1: D, date2: D): boolean {
-    return date1 && date2 && this.isSameMonth(date1, date2);
+      throw new Error("STUB");
   }
 
   /**
    * Checks is two dates have the same year.
    * */
   public isSameYearSafe(date1: D, date2: D): boolean {
-    return date1 && date2 && this.isSameYear(date1, date2);
+      throw new Error("STUB");
   }
 
   /**

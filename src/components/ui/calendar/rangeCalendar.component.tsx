@@ -132,48 +132,22 @@ export class RangeCalendar<D = Date> extends BaseCalendarComponent<RangeCalendar
   // BaseCalendarComponent
 
   protected createDates(date: D): DateBatch<D> {
-    return this.dataService.createDayPickerData(date, this.props.range);
+      throw new Error("STUB");
   }
 
   protected selectedDate(): D | undefined {
-    return this.props.range?.startDate;
+      throw new Error("STUB");
   }
 
   protected onDateSelect(date: D): void {
-    if (this.props.onSelect) {
-      const range: CalendarRange<D> = this.rangeDateService.createRange(this.props.range, date);
-      this.props.onSelect(range);
-    }
+      throw new Error("STUB");
   }
 
   protected isDateSelected(): boolean {
-    return false;
+      throw new Error("STUB");
   }
 
   protected shouldUpdateDate(props: CalendarPickerCellProps<D>, nextProps: CalendarPickerCellProps<D>): boolean {
-    const dateChanged: boolean = this.dateService.compareDatesSafe(props.date.date, nextProps.date.date) !== 0;
-
-    if (dateChanged) {
-      return true;
-    }
-
-    const selectionChanged: boolean = props.selected !== nextProps.selected;
-    const disablingChanged: boolean = props.disabled !== nextProps.disabled;
-    const rangeChanged: boolean = props.range !== nextProps.range;
-    const rangeStartPlaceChanged: boolean = props.firstRangeItem !== nextProps.firstRangeItem;
-    const rangeEndPlaceChanged: boolean = props.lastRangeItem !== nextProps.lastRangeItem;
-
-    const shouldUpdate: boolean =
-      selectionChanged ||
-      disablingChanged ||
-      rangeChanged ||
-      rangeStartPlaceChanged ||
-      rangeEndPlaceChanged;
-
-    if (shouldUpdate) {
-      return true;
-    }
-
-    return props.eva.theme !== nextProps.eva.theme;
+      throw new Error("STUB");
   }
 }

@@ -21,23 +21,6 @@ export type MinusElement = React.ReactElement<MinusProps>;
 export class Minus extends React.Component<SvgProps> {
 
   public render(): React.ReactElement<SvgProps> {
-    return (
-      <Svg
-        {...this.props}
-        viewBox='0 0 24 24'
-      >
-        <G>
-          <G>
-            <Rect
-              width='24'
-              height='24'
-              transform='rotate(180 12 12)'
-              opacity='0'
-            />
-            <Path d='M19 13H5a1 1 0 0 1 0-2h14a1 1 0 0 1 0 2z' />
-          </G>
-        </G>
-      </Svg>
-    );
+      throw new Error("STUB");
   }
 }

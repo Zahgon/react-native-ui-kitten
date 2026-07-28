@@ -9,27 +9,11 @@ import {
 } from './type';
 
 function throwPackNotFoundError(name: string): void {
-  const docRoot = 'https://akveo.github.io/react-native-ui-kitten/docs';
-
-  const message: string = [
-    `\nIcon: Icon Pack '${name}' is not registered`,
-    'Using UI Kitten components is only possible with configuring ApplicationProvider.',
-    `📖 Documentation: ${docRoot}/guides/setting-up-icons`,
-  ].join('\n');
-
-  throw Error(message);
+    throw new Error("STUB");
 }
 
 function throwIconNotFoundError(name: string, pack: string): void {
-  const docRoot = 'https://akveo.github.io/react-native-ui-kitten/docs';
-
-  const message: string = [
-    `\nIcon: '${name}' icon is not registered in pack '${pack}'.`,
-    'Check icon name or consider switching icon pack.',
-    `📖 Documentation: ${docRoot}/guides/setting-up-icons`,
-  ].join('\n');
-
-  throw Error(message);
+    throw new Error("STUB");
 }
 
 export interface RegisteredIcon<T> {
@@ -56,9 +40,7 @@ class RegistryService {
    * @param {IconPack[]} packs - array of icon packs
    */
   public register<T>(...packs: IconPack<T>[]): void {
-    packs.forEach((pack) => {
-      this.registerIconPack(pack);
-    });
+      throw new Error("STUB");
   }
 
   /**
@@ -68,11 +50,7 @@ class RegistryService {
    * @throws {Error} if pack is nor registered
    */
   public setDefaultIconPack(name: string): void {
-    if (!this.packs.has(name)) {
-      throwPackNotFoundError(name);
-    }
-
-    this.defaultPack = name;
+      throw new Error("STUB");
   }
 
   /**
@@ -80,7 +58,7 @@ class RegistryService {
    * @returns {IconPack} pack by name
    */
   public getIconPack<T>(name: string): IconPack<T> {
-    return this.packs.get(name);
+      throw new Error("STUB");
   }
 
   /**
@@ -90,13 +68,7 @@ class RegistryService {
    * @returns {RegisteredIcon} - registered icon of a requested/default pack
    */
   public getIcon<T>(name: string, pack?: string): RegisteredIcon<T> {
-    const iconsPack: IconPack<T> = pack ? this.getPackOrThrow(pack) : this.getDefaultPack();
-
-    return {
-      name,
-      pack: iconsPack.name,
-      icon: this.getIconFromPack(name, iconsPack),
-    };
+      throw new Error("STUB");
   }
 
   /**
@@ -105,29 +77,19 @@ class RegistryService {
    * @param {IconPack} pack - icon pack to register
    */
   protected registerIconPack<T>(pack: IconPack<T>): void {
-    this.packs.set(pack.name, pack);
+      throw new Error("STUB");
   }
 
   protected getPackOrThrow<T>(name: string): IconPack<T> {
-    const pack: IconPack<IconProps> = this.packs.get(name);
-
-    if (!pack) {
-      throwPackNotFoundError(name);
-    }
-
-    return pack;
+      throw new Error("STUB");
   }
 
   protected getDefaultPack<T>(): IconPack<T> {
-    return this.getIconPack(this.defaultPack);
+      throw new Error("STUB");
   }
 
   protected getIconFromPack<T>(name: string, pack: IconPack<T>, shouldThrow = true): IconProvider<T> {
-    if (shouldThrow && !pack.icons[name]) {
-      throwIconNotFoundError(name, pack.name);
-    }
-
-    return pack.icons[name];
+      throw new Error("STUB");
   }
 }
 

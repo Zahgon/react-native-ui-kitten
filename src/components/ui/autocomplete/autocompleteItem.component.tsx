@@ -39,8 +39,6 @@ export type AutocompleteItemElement = React.ReactElement<AutocompleteItemProps>;
 export class AutocompleteItem extends React.Component<ListItemProps> {
 
   public render(): ListItemElement {
-    return (
-      <ListItem {...this.props} />
-    );
+      throw new Error("STUB");
   }
 }

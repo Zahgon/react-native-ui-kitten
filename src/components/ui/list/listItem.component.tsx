@@ -96,112 +96,23 @@ type WebStyles = {
 export class ListItem extends React.Component<ListItemProps> {
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      iconWidth,
-      iconHeight,
-      iconMarginHorizontal,
-      iconTintColor,
-      titleMarginHorizontal,
-      titleFontFamily,
-      titleFontSize,
-      titleFontWeight,
-      titleColor,
-      descriptionFontFamily,
-      descriptionFontSize,
-      descriptionFontWeight,
-      descriptionColor,
-      descriptionMarginHorizontal,
-      accessoryMarginHorizontal,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        marginHorizontal: iconMarginHorizontal,
-        tintColor: iconTintColor,
-      },
-      title: {
-        marginHorizontal: titleMarginHorizontal,
-        fontFamily: titleFontFamily,
-        fontSize: titleFontSize,
-        fontWeight: titleFontWeight,
-        color: titleColor,
-      },
-      description: {
-        color: descriptionColor,
-        fontFamily: descriptionFontFamily,
-        fontSize: descriptionFontSize,
-        fontWeight: descriptionFontWeight,
-        marginHorizontal: descriptionMarginHorizontal,
-      },
-      accessory: {
-        marginHorizontal: accessoryMarginHorizontal,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderTemplateChildren = (props: ListItemProps, evaStyle): React.ReactElement => {
-    return (
-      <>
-        <FalsyFC
-          style={evaStyle.icon}
-          component={props.accessoryLeft}
-        />
-        <View style={styles.contentContainer}>
-          <FalsyText
-            style={[evaStyle.title, styles.title]}
-            component={props.title}
-          />
-          <FalsyText
-            style={[evaStyle.description, styles.description]}
-            component={props.description}
-          />
-        </View>
-        <FalsyFC
-          style={evaStyle.icon}
-          component={props.accessoryRight}
-        />
-      </>
-    );
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const {
-      eva,
-      style,
-      children,
-      title,
-      description,
-      accessoryLeft,
-      accessoryRight,
-      ...touchableProps
-    } = this.props;
-
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[evaStyle.container, styles.container, webStyles.container, style]}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        {children || this.renderTemplateChildren(this.props, evaStyle)}
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

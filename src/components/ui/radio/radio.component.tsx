@@ -96,109 +96,39 @@ export type RadioElement = React.ReactElement<RadioProps>;
 export class Radio extends React.Component<RadioProps> {
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onFocus = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.FOCUSED]);
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onBlur = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onBlur?.(event);
+      throw new Error("STUB");
   };
 
   private onPress = (): void => {
-    this.props.onChange?.(!this.props.checked);
+      throw new Error("STUB");
   };
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      textMarginHorizontal,
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-      textColor,
-      iconWidth,
-      iconHeight,
-      iconBorderRadius,
-      iconTintColor,
-      outlineWidth,
-      outlineHeight,
-      outlineBorderRadius,
-      outlineBackgroundColor,
-      ...containerParameters
-    } = source;
-
-    return {
-      selectContainer: containerParameters,
-      text: {
-        marginHorizontal: textMarginHorizontal,
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        color: textColor,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        borderRadius: iconBorderRadius,
-        backgroundColor: iconTintColor,
-      },
-      highlight: {
-        width: outlineWidth,
-        height: outlineHeight,
-        borderRadius: outlineBorderRadius,
-        backgroundColor: outlineBackgroundColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const { eva, style, children, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[styles.container, style]}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onPress={this.onPress}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        <View style={styles.highlightContainer}>
-          <View style={[evaStyle.highlight, styles.highlight]} />
-          <View style={[evaStyle.selectContainer, styles.selectContainer]}>
-            <View style={evaStyle.icon} />
-          </View>
-        </View>
-        <FalsyText
-          style={evaStyle.text}
-          component={children}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

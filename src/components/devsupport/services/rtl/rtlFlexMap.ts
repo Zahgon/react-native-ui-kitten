@@ -12,18 +12,8 @@ const FLEX_REVERSE_PREFIX = 'reverse';
  */
 const FlexStartEndMapper: RTLFlexMapper<string> = {
   toRTL(value: string, rtl: boolean): string {
-    if (!rtl || !value.startsWith(FLEX_PREFIX)) {
-      return value;
-    }
-
-    const isReverse: boolean = value.endsWith(FLEX_END_PREFIX);
-
-    if (isReverse) {
-      return `${FLEX_PREFIX}-${FLEX_START_PREFIX}`;
-    }
-
-    return `${FLEX_PREFIX}-${FLEX_END_PREFIX}`;
-  },
+        throw new Error("STUB");
+    },
 };
 
 /**
@@ -33,18 +23,8 @@ const FlexStartEndMapper: RTLFlexMapper<string> = {
  */
 const FlexRowMapper: RTLFlexMapper<string> = {
   toRTL(value: string, rtl: boolean): string {
-    if (!rtl || !value.startsWith(FLEX_ROW_PREFIX)) {
-      return value;
-    }
-
-    const isReverse: boolean = value.endsWith(FLEX_REVERSE_PREFIX);
-
-    if (isReverse) {
-      return FLEX_ROW_PREFIX;
-    }
-
-    return `${FLEX_ROW_PREFIX}-${FLEX_REVERSE_PREFIX}`;
-  },
+        throw new Error("STUB");
+    },
 };
 
 /**
@@ -54,18 +34,8 @@ const FlexRowMapper: RTLFlexMapper<string> = {
  */
 const FlexWrapMapper: RTLFlexMapper<string> = {
   toRTL(value: string, rtl: boolean): string {
-    if (!rtl || !value.startsWith(FLEX_WRAP_PREFIX)) {
-      return value;
-    }
-
-    const isReverse: boolean = value.endsWith(`-${FLEX_REVERSE_PREFIX}`);
-
-    if (isReverse) {
-      return FLEX_WRAP_PREFIX;
-    }
-
-    return `${FLEX_WRAP_PREFIX}-${FLEX_REVERSE_PREFIX}`;
-  },
+        throw new Error("STUB");
+    },
 };
 
 /**

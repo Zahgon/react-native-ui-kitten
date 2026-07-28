@@ -201,55 +201,24 @@ export class Datepicker<D = Date> extends BaseDatepickerComponent<DatepickerProp
   }
 
   private get calendarProps(): CalendarProps<D> {
-    return {
-      min: this.props.min,
-      max: this.props.max,
-      date: this.props.date,
-      initialVisibleDate: this.props.initialVisibleDate,
-      dateService: this.props.dateService,
-      boundingMonth: this.props.boundingMonth,
-      startView: this.props.startView,
-      filter: this.props.filter,
-      title: this.props.title,
-      onSelect: this.props.onSelect,
-      renderDay: this.props.renderDay,
-      renderMonth: this.props.renderMonth,
-      renderYear: this.props.renderYear,
-      renderFooter: this.props.renderFooter,
-      renderArrowRight: this.props.renderArrowRight,
-      renderArrowLeft: this.props.renderArrowLeft,
-      onVisibleDateChange: this.props.onVisibleDateChange,
-    };
+      throw new Error("STUB");
   }
 
   public clear = (): void => {
-    if (this.props.onSelect) {
-      this.props.onSelect(null);
-    }
+      throw new Error("STUB");
   };
 
   // BaseDatepickerComponent
 
   protected getComponentTitle(): RenderProp<TextProps> | React.ReactText {
-    if (this.props.date) {
-      return this.props.dateService.format(this.props.date, null);
-    } else {
-      return this.props.placeholder;
-    }
+      throw new Error("STUB");
   }
 
   protected onSelect = (date: D): void => {
-    this.props.onSelect?.(date);
-    this.props.autoDismiss && this.blur();
+      throw new Error("STUB");
   };
 
   protected renderCalendar(): CalendarElement<D> {
-    return (
-      <Calendar
-        {...this.calendarProps}
-        ref={this.calendarRef}
-        onSelect={this.onSelect}
-      />
-    );
+      throw new Error("STUB");
   }
 }

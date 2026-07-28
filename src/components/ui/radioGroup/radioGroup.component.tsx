@@ -58,44 +58,18 @@ export class RadioGroup extends React.Component<RadioGroupProps> {
   };
 
   private onRadioChange = (index: number): void => {
-    this.props.onChange?.(index);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const { itemMarginVertical, ...containerParameters } = source;
-
-    return {
-      container: containerParameters,
-      item: {
-        marginVertical: itemMarginVertical,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderRadioElements = (source: ChildrenWithProps<RadioProps>, style: StyleType): RadioElement[] => {
-    return React.Children.map(source, (element: RadioElement, index: number): RadioElement => {
-      return React.cloneElement(element, {
-        key: index,
-        style: [style, element.props.style],
-        checked: this.props.selectedIndex === index,
-        onChange: () => this.onRadioChange(index),
-      });
-    });
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { eva, style, children, ...viewProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    const radioElements: RadioElement[] = this.renderRadioElements(children, evaStyle.item);
-
-    return (
-      <View
-        {...viewProps}
-        style={[evaStyle.container, style]}
-      >
-        {radioElements}
-      </View>
-    );
+      throw new Error("STUB");
   }
 }

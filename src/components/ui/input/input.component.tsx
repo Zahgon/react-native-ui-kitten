@@ -145,160 +145,45 @@ export class Input extends React.Component<InputProps> implements WebEventRespon
   private webEventResponder: WebEventResponderInstance = WebEventResponder.create(this);
 
   public focus = (): void => {
-    this.textInputRef.current?.focus();
+      throw new Error("STUB");
   };
 
   public blur = (): void => {
-    this.textInputRef.current?.blur();
+      throw new Error("STUB");
   };
 
   public isFocused = (): boolean => {
-    return this.textInputRef.current?.isFocused();
+      throw new Error("STUB");
   };
 
   public clear = (): void => {
-    this.textInputRef.current?.clear();
+      throw new Error("STUB");
   };
 
   // WebEventResponderCallbacks
 
   public onMouseEnter = (): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
+      throw new Error("STUB");
   };
 
   public onMouseLeave = (): void => {
-    this.props.eva.dispatch([]);
+      throw new Error("STUB");
   };
 
   private onTextFieldFocus = (event: NativeSyntheticEvent<TextInputFocusEventData>): void => {
-    this.props.eva.dispatch([Interaction.FOCUSED]);
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onTextFieldBlur = (event: NativeSyntheticEvent<TextInputFocusEventData>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onBlur?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const flatStyles: ViewStyle = StyleSheet.flatten(this.props.style);
-    const { rest: inputContainerStyle, ...containerStyle } =
-      PropsService.allWithRest(flatStyles, FlexViewCrossStyleProps);
-
-    const {
-      textMarginHorizontal,
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-      textColor,
-      placeholderColor,
-      iconWidth,
-      iconHeight,
-      iconMarginHorizontal,
-      iconTintColor,
-      labelColor,
-      labelFontSize,
-      labelMarginBottom,
-      labelFontWeight,
-      labelFontFamily,
-      captionMarginTop,
-      captionColor,
-      captionFontSize,
-      captionFontWeight,
-      captionFontFamily,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerStyle,
-      inputContainer: {
-        ...containerParameters,
-        ...inputContainerStyle,
-      },
-      text: {
-        marginHorizontal: textMarginHorizontal,
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        color: textColor,
-      },
-      placeholder: {
-        color: placeholderColor,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        marginHorizontal: iconMarginHorizontal,
-        tintColor: iconTintColor,
-      },
-      label: {
-        color: labelColor,
-        fontSize: labelFontSize,
-        marginBottom: labelMarginBottom,
-        fontWeight: labelFontWeight,
-        fontFamily: labelFontFamily,
-      },
-      captionLabel: {
-        fontSize: captionFontSize,
-        fontWeight: captionFontWeight,
-        fontFamily: captionFontFamily,
-        color: captionColor,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const {
-      eva,
-      textStyle,
-      label,
-      caption,
-      accessoryLeft,
-      accessoryRight,
-      testID,
-      ...textInputProps
-    } = this.props;
-
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWithoutFeedback
-        testID={`@${testID}/container`}
-        style={evaStyle.container}
-        focusable={false}
-        onPress={this.focus}
-      >
-        <FalsyText
-          style={[evaStyle.label, styles.label]}
-          component={label}
-        />
-        <View style={[evaStyle.inputContainer, styles.inputContainer]}>
-          <FalsyFC
-            style={evaStyle.icon}
-            component={accessoryLeft}
-          />
-          <TextInput
-            ref={this.textInputRef}
-            placeholderTextColor={evaStyle.placeholder.color}
-            {...textInputProps}
-            {...this.webEventResponder.eventHandlers}
-            testID={`@${testID}/input`}
-            style={[evaStyle.text, styles.text, platformStyles.text, textStyle]}
-            editable={!textInputProps.disabled}
-            onFocus={this.onTextFieldFocus}
-            onBlur={this.onTextFieldBlur}
-          />
-          <FalsyFC
-            style={evaStyle.icon}
-            component={accessoryRight}
-          />
-        </View>
-        <FalsyText
-          style={[evaStyle.captionLabel, styles.captionLabel]}
-          component={caption}
-        />
-      </TouchableWithoutFeedback>
-    );
+      throw new Error("STUB");
   }
 }
 

@@ -58,11 +58,6 @@ export class PulseAnimation extends Animation<PulseAnimationConfig, ViewProps> {
   }
 
   public toProps(): ViewProps {
-    return {
-      // @ts-ignore: Animated.Value is not assignable to a number, but it is a number
-      style: {
-        transform: [{ scale: this.value }],
-      },
-    };
+      throw new Error("STUB");
   }
 }

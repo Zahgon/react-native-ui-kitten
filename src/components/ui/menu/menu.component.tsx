@@ -114,59 +114,35 @@ export class Menu extends React.Component<MenuProps> {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private get data(): any[] {
-    return React.Children.toArray(this.props.children || []);
+      throw new Error("STUB");
   }
 
   private get shouldRenderDividers(): boolean {
-    return this.props.appearance !== 'noDivider';
+      throw new Error("STUB");
   }
 
   public clear = (): void => {
-    this.props.onSelect?.(null);
+      throw new Error("STUB");
   };
 
   private onItemPress = (descriptor: MenuItemDescriptor): void => {
-    this.props.onSelect?.(descriptor.index);
+      throw new Error("STUB");
   };
 
   private isItemSelected = (descriptor: MenuItemDescriptor): boolean => {
-    return descriptor.index.equals(this.props.selectedIndex);
+      throw new Error("STUB");
   };
 
   // eslint-disable-next-line max-len
   private cloneItemWithProps = (element: React.ReactElement<MenuItemProps>, props: MenuItemProps): React.ReactElement => {
-    const nestedElements = React.Children.map(element.props.children, (el: MenuItemElement, index: number) => {
-      const descriptor = this.service.createDescriptorForNestedElement(props.descriptor, index);
-      const selected: boolean = this.isItemSelected(descriptor);
-
-      return this.cloneItemWithProps(el, { ...props, selected, descriptor });
-    });
-
-    const onPress = (descriptor: MenuItemDescriptor, event?: GestureResponderEvent): void => {
-      element.props.onPress?.(descriptor, event);
-      props.onPress(descriptor);
-    };
-
-    return React.cloneElement(element, { ...element.props, ...props, onPress }, nestedElements);
+      throw new Error("STUB");
   };
 
   private renderItem = (info: ListRenderItemInfo<MenuItemElement>): React.ReactElement => {
-    const descriptor = this.service.createDescriptorForElement(info.item, info.index);
-    const selected: boolean = this.isItemSelected(descriptor);
-
-    return this.cloneItemWithProps(info.item, { descriptor, selected, onPress: this.onItemPress });
+      throw new Error("STUB");
   };
 
   public render(): ListElement {
-    const { appearance, ...listProps } = this.props;
-
-    return (
-      <List
-        ItemSeparatorComponent={this.shouldRenderDividers && Divider}
-        {...listProps}
-        data={this.data}
-        renderItem={this.renderItem}
-      />
-    );
+      throw new Error("STUB");
   }
 }

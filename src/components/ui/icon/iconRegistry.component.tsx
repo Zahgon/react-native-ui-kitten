@@ -58,25 +58,14 @@ export class IconRegistry extends React.Component<IconRegistryProps> {
   };
 
   private findDefaultIconPack = (packs: IconPack<unknown>[], name: string): IconPack<unknown> => {
-    const requestedPackIndex: number = packs.findIndex((pack: IconPack<unknown>): boolean => {
-      return pack.name === name;
-    });
-
-    return packs[Math.max(0, requestedPackIndex)];
+      throw new Error("STUB");
   };
 
   private registerIcons = (source: IconsProp, defaultPack: string): void => {
-    const packs: IconPack<unknown>[] = Array.isArray(source) ? source : [source];
-    const defaultIconPack: IconPack<unknown> = this.findDefaultIconPack(packs, defaultPack);
-
-    IconRegistryService.register(...packs);
-    IconRegistryService.setDefaultIconPack(defaultIconPack.name);
+      throw new Error("STUB");
   };
 
   public render(): React.ReactNode {
-    const { icons, defaultIcons } = this.props;
-    this.registerIcons(icons, defaultIcons);
-
-    return null;
+      throw new Error("STUB");
   }
 }

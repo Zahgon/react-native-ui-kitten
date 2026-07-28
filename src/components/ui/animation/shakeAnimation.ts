@@ -59,11 +59,6 @@ export class ShakeAnimation extends Animation<ShakeAnimationConfig, ViewProps> {
   }
 
   public toProps(): ViewProps {
-    return {
-      // @ts-ignore: Animated.Value is not assignable to a number, but it is a number
-      style: {
-        transform: [{ translateX: this.value }],
-      },
-    };
+      throw new Error("STUB");
   }
 }

@@ -32,26 +32,10 @@ export type TouchableWithoutFeedbackElement = React.ReactElement<TouchableWithou
 export class TouchableWithoutFeedback extends React.Component<TouchableWithoutFeedbackProps> {
 
   private createHitSlopInsets = (): Insets => {
-    const flatStyle: ViewStyle = StyleSheet.flatten(this.props.style || {});
-
-    // @ts-ignore: `width` is restricted to be a number
-    const value: number = 40 - flatStyle.height || 0;
-
-    return {
-      left: value,
-      top: value,
-      right: value,
-      bottom: value,
-    };
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement {
-    return (
-      <TouchableOpacity
-        activeOpacity={1.0}
-        hitSlop={this.props.useDefaultHitSlop && this.createHitSlopInsets()}
-        {...this.props}
-      />
-    );
+      throw new Error("STUB");
   }
 }

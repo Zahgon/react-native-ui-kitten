@@ -5,26 +5,12 @@
  */
 
 export const batch = <T>(target: T[], batchSize: number, offset = 0): T[][] => {
-  return target.reduce((res, item, index): T[] => {
-    const chunkIndex = Math.floor((index + offset) / batchSize);
-    if (!res[chunkIndex]) {
-      res[chunkIndex] = [];
-    }
-    res[chunkIndex].push(item);
-
-    return res;
-  }, []);
+    throw new Error("STUB");
 };
 
 /**
  * returns array with numbers from zero to bound.
  * */
-export const range = <T>(bound: number, producer: (number) => T = i => i): T[] => {
-  const arr: T[] = [];
-
-  for (let i = 0; i < bound; i++) {
-    arr.push(producer(i));
-  }
-
-  return arr;
+export const range = <T>(bound: number, producer: (number) => T = i => { throw new Error("STUB"); }): T[] => {
+    throw new Error("STUB");
 };

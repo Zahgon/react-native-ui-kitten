@@ -82,86 +82,23 @@ export type CardElement = React.ReactElement<CardProps>;
 export class Card extends React.Component<CardProps> {
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      bodyPaddingVertical,
-      bodyPaddingHorizontal,
-      accentHeight,
-      accentBackgroundColor,
-      headerPaddingVertical,
-      headerPaddingHorizontal,
-      footerPaddingVertical,
-      footerPaddingHorizontal,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      body: {
-        paddingVertical: bodyPaddingVertical,
-        paddingHorizontal: bodyPaddingHorizontal,
-      },
-      accent: {
-        height: accentHeight,
-        backgroundColor: accentBackgroundColor,
-      },
-      header: {
-        paddingHorizontal: headerPaddingHorizontal,
-        paddingVertical: headerPaddingVertical,
-      },
-      footer: {
-        paddingHorizontal: footerPaddingHorizontal,
-        paddingVertical: footerPaddingVertical,
-      },
-    };
+      throw new Error("STUB");
   };
 
   private renderStatusAccent = (evaStyle): React.ReactElement => {
-    return (
-      <View style={evaStyle} />
-    );
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const { eva, style, children, accent, header, footer, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[styles.container, evaStyle.container, style]}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        <FalsyFC
-          style={evaStyle.accent}
-          fallback={this.renderStatusAccent(evaStyle.accent)}
-          component={accent}
-        />
-        <FalsyFC
-          style={[styles.transparent, evaStyle.header]}
-          component={header}
-        />
-        {header && <Divider />}
-        <View style={[styles.content, evaStyle.body]}>
-          {children}
-        </View>
-        {footer && <Divider />}
-        <FalsyFC
-          style={[styles.transparent, evaStyle.footer]}
-          component={footer}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 

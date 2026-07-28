@@ -79,62 +79,23 @@ export class TabView extends React.Component<TabViewProps> {
   private tabBarRef = React.createRef<TabBar>();
 
   private onBarSelect = (index: number): void => {
-    this.props.onSelect?.(index);
+      throw new Error("STUB");
   };
 
   private onPagerSelect = (index: number): void => {
-    this.props.onSelect?.(index);
+      throw new Error("STUB");
   };
 
   private renderComponentChild = (element: TabElement, index: number): TabViewChildElement => {
-    return {
-      tab: React.cloneElement(element, { key: index }),
-      content: element.props.children,
-    };
+      throw new Error("STUB");
   };
 
   private renderComponentChildren = (source: ChildrenWithProps<TabProps>): TabViewChildren => {
-    const children = React.Children.toArray(source) as TabElement[];
-
-    return children.reduce((acc: TabViewChildren, element: TabElement, index: number) => {
-      const { tab, content } = this.renderComponentChild(element, index);
-      return {
-        tabs: [...acc.tabs, tab],
-        contents: [...acc.contents, content],
-      };
-    }, new TabViewChildren());
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { style, selectedIndex, children, tabBarStyle, indicatorStyle, ...viewProps } = this.props;
-    const { tabs, contents } = this.renderComponentChildren(children);
-
-    return (
-      <View
-        {...viewProps}
-        style={[styles.container, style]}
-      >
-        <TabBar
-          style={tabBarStyle}
-          ref={this.tabBarRef}
-          selectedIndex={selectedIndex}
-          indicatorStyle={indicatorStyle}
-          onSelect={this.onBarSelect}
-        >
-          {tabs}
-        </TabBar>
-        <ViewPager
-          ref={this.viewPagerRef}
-          {...viewProps}
-          style={[styles.container, style]}
-          selectedIndex={selectedIndex}
-          shouldLoadComponent={this.props.shouldLoadComponent}
-          onSelect={this.onPagerSelect}
-        >
-          {contents}
-        </ViewPager>
-      </View>
-    );
+      throw new Error("STUB");
   }
 }
 

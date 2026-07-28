@@ -20,7 +20,7 @@ export class IndexPath {
   }
 
   get groupIndex(): IndexPath {
-    return this.section >= 0 && new IndexPath(this.row);
+      throw new Error("STUB");
   }
 
   public toString(): string {
@@ -31,10 +31,7 @@ export class IndexPath {
   }
 
   public equals = (other: IndexPath): boolean => {
-    if (!other) {
-      return false;
-    }
-    return this.row === other.row && this.section === other.section;
+      throw new Error("STUB");
   };
 }
 

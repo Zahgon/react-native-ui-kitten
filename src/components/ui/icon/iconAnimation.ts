@@ -24,14 +24,5 @@ export interface IconAnimationRegistry {
 export function getIconAnimation(
   animation?: keyof IconAnimationRegistry | null,
   config?: AnimationConfig): IconAnimation | null {
-  switch (animation) {
-    case 'zoom':
-      return new ZoomAnimation(config);
-    case 'pulse':
-      return new PulseAnimation(config);
-    case 'shake':
-      return new ShakeAnimation(config);
-    default:
-      return null;
-  }
+    throw new Error("STUB");
 }

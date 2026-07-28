@@ -32,7 +32,7 @@ export class ThemeService {
    */
   static create = (theme: ThemeType): ThemeType => {
     return Object.keys(theme).reduce((acc: ThemeType, key: string): ThemeType => {
-      return { ...acc, [key]: ThemeService.getValue(key, theme, key) };
+        throw new Error("STUB");
     }, {});
   };
 

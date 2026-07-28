@@ -30,30 +30,30 @@ export interface CalendarDateInfo<D> extends CalendarDateOptions {
 const VIEW_MODE_DATE: CalendarViewMode = {
   id: 'DATE',
   navigationNext: (): CalendarViewMode => {
-    return VIEW_MODE_YEAR;
+      throw new Error("STUB");
   },
   pickNext: (): CalendarViewMode => {
-    return VIEW_MODE_DATE;
+      throw new Error("STUB");
   },
 };
 
 const VIEW_MODE_MONTH: CalendarViewMode = {
   id: 'MONTH',
   navigationNext: (): CalendarViewMode => {
-    return VIEW_MODE_DATE;
+      throw new Error("STUB");
   },
   pickNext: (): CalendarViewMode => {
-    return VIEW_MODE_DATE;
+      throw new Error("STUB");
   },
 };
 
 const VIEW_MODE_YEAR: CalendarViewMode = {
   id: 'YEAR',
   navigationNext: (): CalendarViewMode => {
-    return VIEW_MODE_DATE;
+      throw new Error("STUB");
   },
   pickNext: (): CalendarViewMode => {
-    return VIEW_MODE_MONTH;
+      throw new Error("STUB");
   },
 };
 

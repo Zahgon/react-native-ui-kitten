@@ -91,30 +91,18 @@ export class Icon<T> extends React.Component<IconProps<T>> {
   }
 
   public componentWillUnmount(): void {
-    this.animation?.release();
+      throw new Error("STUB");
   }
 
   public startAnimation = (callback?: Animated.EndCallback): void => {
-    this.animation?.start(callback);
+      throw new Error("STUB");
   };
 
   public stopAnimation = (): void => {
-    this.animation?.stop();
+      throw new Error("STUB");
   };
 
   public render(): React.ReactElement<ViewProps> {
-    const { name, pack, animation, animationConfig, ...iconProps } = this.props;
-    const registeredIcon: RegisteredIcon<T> = IconRegistryService.getIcon(name, pack);
-    const iconElement = registeredIcon.icon.toReactElement(iconProps as IconProps);
-
-    if (!this.animation) {
-      return iconElement;
-    }
-
-    return (
-      <Animated.View {...this.animation.toProps()}>
-        {iconElement}
-      </Animated.View>
-    );
+      throw new Error("STUB");
   }
 }

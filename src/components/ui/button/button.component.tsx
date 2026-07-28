@@ -124,96 +124,35 @@ export type ButtonElement = React.ReactElement<ButtonProps>;
 export class Button extends React.Component<ButtonProps> {
 
   private onMouseEnter = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.HOVER]);
-    this.props.onMouseEnter?.(event);
+      throw new Error("STUB");
   };
 
   private onMouseLeave = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onMouseLeave?.(event);
+      throw new Error("STUB");
   };
 
   private onFocus = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([Interaction.FOCUSED]);
-    this.props.onFocus?.(event);
+      throw new Error("STUB");
   };
 
   private onBlur = (event: NativeSyntheticEvent<TargetedEvent>): void => {
-    this.props.eva.dispatch([]);
-    this.props.onBlur?.(event);
+      throw new Error("STUB");
   };
 
   private onPressIn = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([Interaction.ACTIVE]);
-    this.props.onPressIn?.(event);
+      throw new Error("STUB");
   };
 
   private onPressOut = (event: GestureResponderEvent): void => {
-    this.props.eva.dispatch([]);
-    this.props.onPressOut?.(event);
+      throw new Error("STUB");
   };
 
   private getComponentStyle = (source: StyleType): StyleType => {
-    const {
-      textColor,
-      textFontFamily,
-      textFontSize,
-      textFontWeight,
-      textMarginHorizontal,
-      iconWidth,
-      iconHeight,
-      iconTintColor,
-      iconMarginHorizontal,
-      ...containerParameters
-    } = source;
-
-    return {
-      container: containerParameters,
-      text: {
-        color: textColor,
-        fontFamily: textFontFamily,
-        fontSize: textFontSize,
-        fontWeight: textFontWeight,
-        marginHorizontal: textMarginHorizontal,
-      },
-      icon: {
-        width: iconWidth,
-        height: iconHeight,
-        tintColor: iconTintColor,
-        marginHorizontal: iconMarginHorizontal,
-      },
-    };
+      throw new Error("STUB");
   };
 
   public render(): TouchableWebElement {
-    const { eva, style, accessoryLeft, accessoryRight, children, ...touchableProps } = this.props;
-    const evaStyle = this.getComponentStyle(eva.style);
-
-    return (
-      <TouchableWeb
-        {...touchableProps}
-        style={[evaStyle.container, styles.container, style]}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        onPressIn={this.onPressIn}
-        onPressOut={this.onPressOut}
-      >
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryLeft}
-        />
-        <FalsyText
-          style={evaStyle.text}
-          component={children}
-        />
-        <FalsyFC
-          style={evaStyle.icon}
-          component={accessoryRight}
-        />
-      </TouchableWeb>
-    );
+      throw new Error("STUB");
   }
 }
 
